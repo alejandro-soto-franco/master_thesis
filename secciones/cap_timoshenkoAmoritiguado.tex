@@ -731,7 +731,10 @@ Empezamos probando que $A$ es disipativo.
     Esto demuestra entonces que la propiedad de decaimiento sobre el funcional de energía se verifica para cualquier solución, concluyendo así la prueba.
 \end{proof}
 
-\textcolor{red}{TEXTO...}
+\section{Comportamiento asintótico de la solución vía semigrupos de operadores lineales}
+\label{ch:TimoshenkoFric:section:compAsintoticoSG}
+
+\textcolor{red}{TEXTO... HABLAR DE QUE AQUÍ ASUMO LAS COSAS COMPLEJAS!!}
 
 \begin{Lema}[(Resolvente de $A$)]
 \label{ch:TimoshenkoFric:lemma:resolventeA}
@@ -740,5 +743,438 @@ Empezamos probando que $A$ es disipativo.
 \end{Lema}
 
 \begin{proof}
+    Dado que las inmersiones $H^2(0,L) \hookrightarrow H^1(0,L) \hookrightarrow L^2(0,L)$ son compactas por el Teorema \ref{ch:preliminares:th:inmersionesSobolev},\todo[inline]{HACER LA PRUEBA DE $H^2 \hookrightarrow H^1$} entonces se sigue que cada espacio del producto cartesiano en $D(A)$ está inmerso de manera compacta en su respectivo espacio de $\mathcal{H}$ (es decir, $\big(H^2(0,L) \cap H^1_0(0,L)\big) \overset{c}{\hookrightarrow} H_0^1(0,L)$ y $H_0^1(0,L) \overset{c}{\hookrightarrow} L^2(0,L)$). Luego, se sigue que $D(A) \overset{c}{\hookrightarrow} \mathcal{H}$ con las normas usuales.
+
+    Queremos ahora aplicar la Proposición \eqref{ch:semigrupos:section:estExp:prop:compRes}, y para ello debemos probar que $D(A) \overset{c}{\hookrightarrow} \mathcal{H}$, donde $A$ está equipado con la norma de su gráfico, $G(A)$. Obtendremos esto probando que $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big) {\hookrightarrow} \big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big)$, y así se podrá concluir que $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big) {\hookrightarrow} \big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big) \overset{c}{\hookrightarrow} \big(\mathcal{H}, \lVert \, \cdot \, \rVert_{\mathcal{H}} \big)$; es decir, componiendo la inmersión continua con la compacta podremos concluir que $\big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big) \overset{c}{\hookrightarrow} \big(\mathcal{H}, \lVert \, \cdot \, \rVert_{\mathcal{H}}\big)$, que es lo que deseamos.
+
+    Para probar que $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big) {\hookrightarrow} \big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big)$ debemos demostrar que existe una constante $C$ tal que
+
+    \[\lVert U \rVert_{D(A)} \leq C\lVert U \rVert_{G(A)} \text{ es decir, } \lVert U \rVert_{D(A)} \leq C(\lVert U \rVert_{\mathcal{H}} + \lVert AU\rVert_{\mathcal{H}}).\]
+
+    Sea entonces 
     
+    \begin{align*}
+        U &= (\varphi, \varphi_t, \psi, \psi_t)^\top \in D(A) \text{ y, }\\
+        AU &= \left(\varphi_t, \frac{k}{\rho_1}(\varphi_x + \psi)_x - \frac{\alpha}{\rho_1}\varphi_t, \psi_t, -\frac{k}{\rho_2}(\varphi_x + \psi) + \frac{b}{\rho_2}\psi_{xx} - \frac{\beta}{\rho_2}\psi_t \right)^\top \in \mathcal{H},
+    \end{align*}
+
+    donde 
+
+    \[\lVert U \rVert_{D(A)} = \lVert \varphi \lVert_{H^2} + \lVert \varphi_t \lVert_{H_0^1} + \lVert \psi \rVert_{H^2} + \lVert \psi_t \rVert_{H_0^1}\]
+
+    y, aplicando sucesivamente la desigualdad de Poincaré:
+
+    \[\lVert U \rVert_{D(A)} = \lVert \varphi_{xx} \lVert_{L^2} + \lVert \varphi_t \lVert_{H_0^1} + \lVert \psi_{xx} \rVert_{L^2} + \lVert \psi_t \rVert_{H_0^1}.\]
+    
+    Acotamos ahora término a término tomando como norma de $\mathcal{H}$ la inducida por el funcional de energía (véase \ref{normaEnergiaH}). Empezamos por acotar $\lVert \varphi_t \lVert_{H_0^1}$ y $\lVert \psi_t \lVert_{H_0^1}$ trivialmente por el hecho de que $AU \in \mathcal{H}$.
+    
+    \begin{align*}
+        \lVert \varphi_t \lVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
+        \lVert \psi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}.\\
+    \end{align*}
+
+    Ahora acotamos $\lVert \varphi_{xx} \lVert_{L^2}$ y $\lVert \psi_{xx} \rVert_{L^2}$, empezando por $\lVert \varphi_{xx} \lVert_{L^2}$. En primer lugar, se sigue por definición de la norma de $\mathcal{H}$ que:
+
+    \begin{align*}
+        \left \lVert k(\varphi_x + \psi)_x - \alpha\varphi_t \right \rVert_{L^2} &\leq \rho_1\lVert AU \rVert_{\mathcal{H}}\\
+        \lVert k\psi_x\rVert_{L^2} + \lVert\alpha \varphi_t \rVert_{L^2} &\leq C_1\lVert U \rVert_{\mathcal{H}},
+    \end{align*}
+
+    para una constante $C_1 > 0$. Luego
+
+    \begin{align*}
+        k\lVert \varphi_{xx} \rVert_{L^2} = \left\lVert \left( k(\varphi_x + \psi)_x - \alpha\varphi_t \right) - k\psi_x + \alpha \varphi_t \right\rVert_{L^2} &\leq \left \lVert k(\varphi_x + \psi)_x - \alpha\varphi_t \right \rVert_{L^2} + \lVert k\psi_x\rVert_{L^2} + \lVert\alpha \varphi_t \rVert_{L^2}\\
+        &\leq \rho_1\lVert AU \rVert_{\mathcal{H}} + C_1\lVert U \rVert_{\mathcal{H}}\\
+        &\leq C_1^\prime(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}).
+    \end{align*}
+
+    Donde $C_1^\prime = \max\{\rho_1, C_1\}$ Aplicando un procedimiento análogo con $\lVert \psi_{xx} \rVert_{L^2}$ obtenemos que:
+
+    \begin{align*}
+        b\lVert \psi_{xx} \rVert_{L^2} \leq C^\prime_2(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}),   
+    \end{align*}
+
+    donde $C_2^\prime = \max\{C_2, \rho_2\}$ y $C_2$ es tal que $\lVert k \varphi_x \rVert_{L^2} + \lVert \beta \psi_t \rVert_{L^2} \leq C_2 \lVert U \rVert_{\mathcal{H}}$.
+
+    Recopilando todos nuestros hallazgos, tenemos que:
+
+    \begin{align*}
+        \lVert \varphi_t \lVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
+        \lVert \psi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
+        \lVert \varphi_{xx} \rVert_{L^2} &\leq \frac{C_1^\prime}{k}\big(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\big)\\
+        \lVert \psi_{xx} \rVert_{L^2} &\leq \frac{C_2^\prime}{b}\big(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\big).
+    \end{align*}
+
+    Sumando todas las desigualdades y escogiendo $C = 2 + \frac{C_1^\prime}{k} + \frac{C_2^\prime}{b}$ tenemos que:
+
+    \[\lVert U \rVert_{D(A)} \leq C \big(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\big),\]
+
+    lo cual prueba que $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big) {\hookrightarrow} \big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big)$. 
+    
+    Lo anterior nos permite entonces utilizar la Proposición \eqref{ch:semigrupos:section:estExp:prop:compRes} (sabemos que $\rho(A) \neq \varnothing$ por la Proposición \ref{ch:TimoshenkoFric:prop:ResolventeEsSobreyect}, la cual nos asegura que $1 \in \rho(A)$) y, así, $\rho(A)$ es compacto. Esto a su vez nos permite invocar el Corolario \ref{ch:semigrupos:section:estExp:cor:espectroResComp}, que nos asegura que el espectro de $A$, $\sigma(A)$, está formado exclusivamente por autovalores de $A$.
+
+    Proseguimos por contradicción. Supongamos que $i\mathbb{R} \not \subseteq \rho(A)$. En ese caso existe $\lambda \in \mathbb{R}$ tal que $i\lambda \notin \rho(A)$, lo cual implica (por definición del conjunto resolvente) que $i\lambda \in \sigma(A)$; esto es, existe $U = (\varphi, \varphi_t, \psi, \psi_t) \in D(A)$ no nulo tal que
+
+    \[AU - i\lambda U = 0.\]
+
+    Nótese que esto último es cierto si y sólo si $i\lambda$ es un autovalor de $A$, lo cual sabemos que se cumple por lo discutido anteriormente.
+
+    Ahora, tomando el producto interno de $AU - i\lambda U$ con $U$ en $\mathcal{H}$, tenemos
+
+    \[(AU, U)_{\mathcal{H}} - i\lambda \lVert U \rVert^2_{\mathcal{H}} = 0.\]
+
+    Estudiamos ahora la parte real de $(AU, U)_{\mathcal{H}}$ utilizando el producto interno inducido por el funcional de energía \ref{prodInternoEnergiaH}:
+
+    \begin{align*}
+        &(AU, U)_{\mathcal{H}}\\
+        =& \Bigg(\left(\varphi_t, \frac{k}{\rho_1}(\varphi_x + \psi)_x - \frac{\alpha}{\rho_1}\varphi_t, \psi_t, -\frac{k}{\rho_2}(\varphi_x + \psi) + \frac{b}{\rho_2}\psi_{xx} - \frac{\beta}{\rho_2}\psi_t \right), (\varphi, \varphi_t, \psi, \psi_t)\Bigg)\\
+        =& 
+        \begin{aligned}[t]
+            &\int_0^L \Big(k(\varphi_x + \psi)_x - \alpha\varphi_t\Big)\overline{\varphi_t} \, dx + \int_0^L \Big(-k(\varphi_x + \psi) + b\psi_{xx} - \beta\psi_t \Big)\overline{\psi_t} \, dx\\
+            &b\int_0^L \psi_x \overline{\psi_{tx}} \, dx + k\int_0^L (\varphi_{tx} + \psi_t)\overline{(\varphi_x + \psi)} \, dx 
+        \end{aligned}\\
+        =&
+        \begin{aligned}[t]
+            &k\int_0^L(\varphi_x + \psi)_x\overline{\varphi_t} \, dx - k\int_0^L(\varphi_x + \psi) \overline{\psi_t} \, dx + b\int_0^L\psi_{xx}\overline{\psi_t} \, dx + b\int_0^L \psi_x \overline{\psi_{tx}} \, dx\\
+            -&\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx.
+        \end{aligned}
+    \end{align*}
+
+    Ahora integramos por partes utilizando las condiciones de borde y agrupamos convenientemente (como ya hemos hecho en ocasiones previas):
+
+    \begin{align*}
+        &(AU, U)_{\mathcal{H}}\\
+        =&
+        \begin{aligned}[t]
+            -&k\int_0^L(\varphi_x + \psi)\overline{\varphi_{tx}} \, dx - k\int_0^L(\varphi_x + \psi) \overline{\psi_t} \, dx - \cancel{b\int_0^L\psi_{x}\overline{\psi_{tx}} \, dx} + \cancel{b\int_0^L \psi_x \overline{\psi_{tx}} \, dx}\\
+            -&\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx
+        \end{aligned}\\
+        =&
+        \begin{aligned}[t]
+            -&k\int_0^L(\varphi_x + \psi)\overline{(\varphi_{tx} + \psi_t)} \, dx + k\int_0^L (\varphi_{tx} + \psi_t)\overline{(\varphi_x + \psi)} \, dx\\ 
+            -&\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx,
+        \end{aligned}
+    \end{align*}
+
+    y, utilizando propiedades algebráicas de los números complejos,
+
+    \begin{align*}
+        &(AU, U)_{\mathcal{H}}\\
+        =& -k\int_0^L(\varphi_x + \psi)\overline{(\varphi_{tx} + \psi_t)} \, dx + k\int_0^L (\varphi_{tx} + \psi_t)\overline{(\varphi_x + \psi)} \, dx -\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx\\
+        =& -k\int_0^L(\varphi_x + \psi)\overline{(\varphi_{tx} + \psi_t)} \, dx + \overline{k\int_0^L \overline{(\varphi_{tx} + \psi_t)}(\varphi_x + \psi) \, dx} -\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx\\
+        =& 2\operatorname{Im}\left(k\int_0^L(\varphi_x + \psi)\overline{(\varphi_{tx} + \psi_t)} \, dx \right)i -\alpha \int_0^L \varphi_t \overline{\varphi_t}\, dx - \beta\int_0^L \psi_t \overline{\psi_t} \, dx,
+    \end{align*}
+
+    donde, tomando la parte real, obtenemos:
+
+    \[\operatorname{Re}(AU, U)_{\mathcal{H}} = -\alpha \lVert \varphi_t\rVert^2_{L^2} - \beta\lVert \psi_t \rVert^2_{L^2}.\]
+    
+    Así, tomando la parte real de $(AU, U)_{\mathcal{H}} - i\lambda \lVert U \rVert^2_{\mathcal{H}} = 0$ tenemos que
+
+    \[\operatorname{Re}(AU, U)_{\mathcal{H}} = 0 \implies -\alpha \lVert \varphi_t\rVert^2_{L^2} - \beta\lVert \psi_t \rVert^2_{L^2} = 0 \implies \varphi_t = \psi_t = 0,\]
+
+    siempre que $\alpha, \beta > 0$. Por otro lado, escribiendo $AU - i\lambda U = 0$ en coordenadas, tenemos:
+
+    \begin{align*}
+        \varphi_t - i\lambda \varphi &= 0\\
+        \frac{k}{\rho_1}\varphi_{xx} + \frac{k}{\rho_1}\psi_x - \frac{\alpha}{\rho_1}\varphi_t - i\lambda\varphi_t &= 0\\
+        \psi_t -i\lambda \psi &= 0\\
+        -\frac{k}{\rho_2}\varphi_x + -\frac{k}{\rho_2}\psi + \frac{b}{\rho_2}\psi_{xx} - \frac{\beta}{\rho_2}\psi_t - i\lambda\psi_t &= 0.
+    \end{align*}
+
+    Sustituyendo $\varphi_t = \psi_t = 0$ en la primera y tercera ecuación obtenemos que $\varphi = \psi = 0$. Así, $U \in D(A)$ tal que $AU = i\lambda U$ y $U = (0,0,0,0)$, lo cual es una contradicción pues $U$ es un autovector de $A$. Se sigue entonces que $i\mathbb{R} \subset \rho(A)$, tal y como queríamos demostrar.
 \end{proof}
+
+\textcolor{red}{TEXTO}\\
+
+\begin{Lema}[(Acotación del resolvente de $A$)]
+\label{ch:TimoshenkoFric:lemma:acotacionResolvente}
+    Supongamos que $\rho_1, \rho_2, b, k > 0$ y que $\alpha,\beta > 0$. Sea $A$ el operador definido en \eqref{operadorATimoDosAmortig}, entonces
+
+    \[\lim_{\lvert \lambda \lvert \rightarrow \infty} \sup \lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})} < \infty\]
+\end{Lema}
+
+\begin{proof}
+    El Lema \ref{ch:TimoshenkoFric:lemma:resolventeA} mostró que $i\mathbb{R} \subset \rho(A)$. Así, dado $F \in \mathcal{H}$ existe un único $U \in D(A)$ tal que
+
+    \[(i\lambda I - A)U = F,\]
+
+    para cualquier elección de $\lambda \in \mathbb{R}$. Sea entonces $U \in D(A)$ tal que $(i\lambda I - A)U = F$ para cualquier $\lambda \in \mathbb{R}$, se tiene en consecuencia que $U = (i\lambda I - A)^{-1}F$. Así, para mostrar que el límite superior de $\lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})} < \infty$ cuando $\lambda \rightarrow \infty$ basta con mostrar (por la definición de la norma de operador) que existe $C > 0$ tal que para todo $F \in \mathcal{H}$
+
+    \[\lVert U \rVert_{\mathcal{H}} \leq C \lVert F \rVert_{\mathcal{H}},\]
+
+    donde $U = (i\lambda I - A)^{-1}F$. Sea $F = (f_1, f_2, f_3, f_4) \in \mathcal{H}$ y $U = (\varphi, \varphi_t, \psi, \psi_t) \in D(A)$ que, como ya se dijo, debe satisfacer que $U = (i\lambda I - A)^{-1}F \ \forall \lambda \in \mathbb{R}$. Tenemos:
+
+    \[i\lambda U - AU = F \implies i\lambda (U,U)_{\mathcal{H}} - (AU, U)_{\mathcal{H}} = (F,U)_{\mathcal{H}}.\]
+
+    Tomando la parte real de la expresión anterior y utilizando que
+
+    \[\operatorname{Re}(AU, U)_{\mathcal{H}} = -\alpha \lVert \varphi_t\rVert^2_{L^2} - \beta\lVert \psi_t \rVert^2_{L^2},\]
+
+    lo cual fue demostrado en la prueba del Lema anterior \ref{ch:TimoshenkoFric:lemma:resolventeA}, se tiene que:
+
+    \begin{align*}
+        &-\operatorname{Re}(AU, U)_{\mathcal{H}} &&= \operatorname{Re}(F,U)_{\mathcal{H}}\\
+        \implies& \alpha \lVert \varphi_t\rVert^2_{L^2} + \beta\lVert \psi_t \rVert^2_{L^2} &&= \operatorname{Re}(F,U)_{\mathcal{H}}\\
+        \text{(Cauchy-Schwarz)} \implies& \alpha \lVert \varphi_t\rVert^2_{L^2} + \beta\lVert \psi_t \rVert^2_{L^2} &&\leq \lVert F \rVert_{\mathcal{H}}\lVert U \rVert_{\mathcal{H}}\\
+        \implies& \lVert \varphi_t\rVert^2_{L^2},\lVert \psi_t \rVert^2_{L^2} &&\leq C \lVert F \rVert_{\mathcal{H}}\lVert U \rVert_{\mathcal{H}},
+    \end{align*}
+
+    siempre que $\alpha, \beta > 0$. Por otro lado, reescribiendo la ecuación $(i\lambda I - A)U = F$ en coordenadas, tenemos:
+
+    \begin{align*}
+        i\lambda \varphi - \varphi_t &= f_1\\
+        i\lambda\varphi_t - \frac{k}{\rho_1}(\varphi_{x} + \psi)_x + \frac{\alpha}{\rho_1}\varphi_t &= f_2\\
+        i\lambda \psi - \psi_t &= f_3\\
+        i\lambda\psi_t + \frac{k}{\rho_2}(\varphi_x + \psi) - \frac{b}{\rho_2}\psi_{xx} + \frac{\beta}{\rho_2}\psi_t &= f_4.
+    \end{align*}
+
+    Ahora, multiplicamos la última ecuación por $\overline{\psi}$ e integramos en $(0,L)$ utilizando la tercera ecuación, la desigualdad triangular, la desigualdad de \textcolor{green}{Cauchy-Schwarz} y la desigualdad de \textcolor{green}{Young}:
+
+    \begin{align*}
+        &\begin{aligned}[t]
+            &i\lambda\int_0^L \psi_t \overline{\psi} \, dx + \frac{k}{\rho_2}\int_0^L(\varphi_x + \psi)\overline{\psi} \, dx - \frac{b}{\rho_2}\int_0^L \psi_{xx}\overline{\psi} \, dx\\
+            +& \frac{\beta}{\rho_2}\int_0^L\psi_t\overline{\psi} \, dx = \int_0^L f_4 \overline{\psi} \, dx
+        \end{aligned}\\
+        %
+        \hspace*{-2cm}
+        \left(
+        \begin{aligned}
+            %\int_0^L\psi_{xx}\overline{\psi} \, dx &= -\int_0^L \psi_x \overline{\psi_x} \, dx\\
+            &\text{int. partes,}\\
+            \overline{i\lambda \psi} &= \overline{- \psi_t - f_3},\\
+            \psi &= -\frac{i}{\lambda}[\psi_t + f_3]
+        \end{aligned}
+        \right)\implies&
+        \begin{aligned}[t]
+            &\int_0^L \psi_t\overline{(-\psi_t - f_3)} \, dx + \frac{k}{\rho_2}\int_0^L(\varphi_x + \psi)\overline{\left(-\frac{i}{\lambda}[\psi_t + f_3] \right)} \, dx\\
+            +& \frac{b}{\rho_2}\int_0^L \psi_x \overline{\psi_x} \, dx + \frac{\beta}{\rho_2}\int_0^L \psi_t \overline{\psi} \, dx = \int_0^L f_4 \overline{\psi} \, dx
+        \end{aligned}\\
+        \implies& 
+        \begin{aligned}[t]
+            &\frac{b}{\rho_2}\int_0^L \psi_x \overline{\psi_x} \, dx = \int_0^L \psi_t\overline{\psi_t} \, dx + \int_0^L\psi_t \overline{f_3} \, dx +\frac{k}{\rho_2}\int_0^L(\varphi_x + \psi)\overline{\left(\frac{i}{\lambda}\psi_t\right)} \, dx\\
+            +&\frac{k}{\rho_2}\int_0^L(\varphi_x + \psi)\overline{\left(\frac{i}{\lambda}f_3\right)} \, dx + \frac{\beta}{\rho_2}\int_0^L \psi_t \overline{(-\psi)} \, dx + \int_0^L f_4 \overline{\psi} \, dx
+        \end{aligned}\\
+        %
+        \hspace*{-2cm}
+        \left(
+        \begin{aligned}
+            &\text{D. triangular,}\\
+            &\text{D. Cauchy-Schwarz}
+        \end{aligned}
+        \right)\implies&
+        \begin{aligned}[t]
+            \frac{b}{\rho_2}\lVert \psi_x \rVert^2_{L^2} \leq &\lVert \psi_t \rVert^2_{L^2} + \lVert \psi_t \rVert_{L^2}\lVert f_3 \rVert_{L^2} + \frac{k}{\rho_2\lvert \lambda \rvert}\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+            +& \frac{k}{\rho_2\lvert \lambda \rvert}\lVert \varphi_x + \psi\rVert_{L^2}\lVert f_3 \rVert_{L^2} + \frac{\beta}{\rho_2}\lVert \psi_t \rVert_{L^2}\lVert \psi \rVert_{L^2} + \lVert f_4 \rVert_{L^2}\lVert \psi \rVert_{L^2}
+        \end{aligned}\\
+        %
+        \hspace*{-2cm}
+        \left(
+        \begin{aligned}
+            &\text{D. Young}\\
+        \end{aligned}
+        \right)\implies&
+        \begin{aligned}[t]
+            \frac{b}{\rho_2}\lVert \psi_x \rVert^2_{L^2} \leq &\lVert \psi_t \rVert^2_{L^2} + \lVert U \rVert_{\mathcal{H}}\lVert F\rVert_{\mathcal{H}} + \frac{k}{\rho_2\lvert \lambda \rvert}\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+            \frac{k}{\rho_2\lvert \lambda \rvert}&\lVert U \rVert_{\mathcal{H}}\lVert F\rVert_{\mathcal{H}} +  C_\varepsilon \lVert \psi_t \rVert^2_{L^2} + \varepsilon \lVert \psi \rVert_{L^2}^2 + \lVert U \rVert_{\mathcal{H}}\lVert F\rVert_{\mathcal{H}}.
+        \end{aligned}\\
+        \implies&
+        \begin{aligned}[t]
+            \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+            +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \psi \rVert_{L^2}^2.
+        \end{aligned}
+    \end{align*}
+
+    Ahora utilizamos la Desigualdad de Poincaré \ref{ch:preliminares:th:poincare} y obtenemos:
+
+    \begin{align*}
+        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \psi \rVert_{L^2}^2\\
+        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon L \lVert \psi_x \rVert_{L^2}^2\\
+        \left(\frac{b}{\rho_2} - \varepsilon L\right)\lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\
+    \end{align*}
+
+    luego, considerando $\varepsilon < \frac{b}{\rho_2 L}$ se tiene que $K^{-1}=\left(\frac{b}{\rho_2} - \varepsilon L \right)$ es estrictamente positivo. Dividiendo por este término toda la desigualdad, el sentido de la misma no cambia y, tomando $\lvert \lambda \rvert > 1$ y considerando que
+
+    \[\lVert \psi_t \rVert_{L^2}^2 \leq C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}, \]
+
+    obtenemos
+
+    \begin{align*}
+        \lVert \psi_x \rVert_{L^2}^2 &\leq 
+        \begin{aligned}[t]
+            K \Bigg[ &C\left(C_{\varepsilon} + 1\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+            + &\left(2 + \frac{k}{\rho_2} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} \Bigg]
+        \end{aligned}\\
+        &=
+        \begin{aligned}[t]
+            K \Bigg[ &\left(C\left(C_{\varepsilon} + 1\right) + 2 + \frac{k}{\rho_2}\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}.
+        \end{aligned}\\
+    \end{align*}
+
+    Definiendo ahora
+
+    \[C' := \max \left\{\left(C\left(C_{\varepsilon} + 1\right) + 2 + \frac{k}{\rho_2}\right), \frac{k}{\rho_2} \right\} > 0 \]
+
+    tenemos
+
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}.\]
+
+    Multiplicamos ahora la segunda ecuación de $(i\lambda I - A)U = F$ en coordenadas por $\overline{\varphi}$ e integramos en $(0,L)$. Usamos además la primera ecuación, que dicta que $i\lambda \varphi - \varphi_t = f_1$. Eso nos permite obtener:
+
+    \begin{align*}
+        &i\lambda\int_0^L\varphi_t\overline{\varphi} \, dx - \frac{k}{\rho_1}\int_0^L(\varphi_{x} + \psi)_x\overline{\varphi} \, dx + \frac{\alpha}{\rho_1}\int_0^L\varphi_t\overline{\varphi} \, dx = \int_0^Lf_2\overline{\varphi} \, dx\\
+        \implies&
+        \begin{aligned}[t]
+            &\int_0^L \varphi_t \overline{(-\varphi_t - f_1)} \, dx + \frac{k}{\rho_1}\int_0^L (\varphi_x + \psi) \overline{\varphi_x} \, dx + \frac{\alpha}{\rho_1}\frac{i}{\lambda}\int_0^L\varphi_t \overline{(\varphi_t + f_1)} \, dx\\
+            =& \int_0^L f_2 \overline{\varphi} \, dx
+        \end{aligned}\\
+        \implies&
+        \begin{aligned}[t]
+            &\int_0^L \varphi_t \overline{(-\varphi_t - f_1)} \, dx + \frac{k}{\rho_1}\left[ \int_0^L(\varphi_x + \psi)\overline{(\varphi_x + \psi)} \, dx - \int_0^L(\varphi_x + \psi)\overline{\psi} \, dx \right]\\
+            +& \frac{\alpha}{\rho_1}\frac{i}{\lambda} \int_0^L \varphi_t \overline{\varphi_t} \, dx + \frac{\alpha}{\rho_1}\frac{i}{\lambda} \int_0^L \varphi_t \overline{f_1} \, dx = \int_0^L f_2 \overline{\varphi} \, dx
+        \end{aligned}\\
+        \implies&
+        \begin{aligned}[t]
+            \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 &= \lVert \varphi_t \rVert_{L^2}^2 + \int_0^L \varphi_t \overline{f_1} \, dx + \frac{k}{\rho_1}\int_0^L (\varphi_x + \psi)\overline{\psi} \, dx + \int_0^L f_2 \overline{\varphi} \, dx\\
+            &- \frac{\alpha i}{\rho_1 \lambda} \left[\lVert \varphi_t \rVert_{L^2}^2 + \int_0^L \varphi_t \overline{f_1} \, dx \right].
+        \end{aligned}
+    \end{align*}
+
+    Ahora acotamos la expresión anterior utilizando la desigualdad de Cauchy-Schwarz y la desigualdad $\lVert \varphi_t \rVert^2_{L^2} \leq C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}$:
+
+    \begin{align*}
+        \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 \leq& \left(1 + \frac{\alpha}{\rho_1 \lvert\lambda\lvert}\right) \lVert \varphi_t \rVert_{L^2}^2 + \left( 1 + \frac{\alpha}{\rho_1 \lvert\lambda\lvert}\right)\lVert \varphi_t \rVert_{L^2} \lVert f_1 \rVert_{L^2}\\
+        +& \frac{k}{\rho_1} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi \rVert_{L^2} + \lVert f_2 \rVert_{L^2} \lVert \varphi \rVert_{L^2},
+    \end{align*}
+
+    considerando ahora un valor de $\lvert \lambda \rvert$ lo suficientemente grande como para que 
+    
+    \[\left(1 + \frac{\alpha}{\rho_1 \lvert\lambda\lvert}\right) < \left(1 + \frac{\alpha}{\rho_1} \right),\]
+
+    y una constante $K'$ tal que
+
+    \[K' = \max \left\{\left(1 + \frac{\alpha}{\rho_1} \right), 1, \frac{k}{\rho_1} \right\} > 0,\]
+
+    tenemos:
+
+    \begin{align*}
+        \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 \leq K'\lVert \varphi_t \rVert_{L^2}^2 + K'\lVert \varphi_t \rVert_{L^2} \lVert f_1 \rVert_{L^2} + K'\lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi \rVert_{L^2} + K'\lVert f_2 \rVert_{L^2} \lVert \varphi \rVert_{L^2}.
+    \end{align*}
+
+    Consideramos ahora las siguientes cotas para cada término:
+
+    \begin{align*}
+        K'\lVert \varphi_t \rVert_{L^2}^2 &\leq K'C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\ 
+        K'\lVert \varphi_t \rVert_{L^2} \lVert f_1 \rVert_{L^2} &\leq K'C_1 \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\
+        K'\lVert f_2 \rVert_{L^2} \lVert \varphi \rVert_{L^2} &\leq K'C_2 \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\
+        K'\lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi \rVert_{L^2} &\leq \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon\lVert \psi \rVert_{L^2}^2,
+    \end{align*}
+
+    donde la última cota se obtiene utilizando la Desigualdad de Young. Juntando todas estas cotas y nombrando
+
+    \[ C^{\prime \prime} := \max \{K'C, K'C_1, K'C_2 \} > 0,\]
+
+    tenemos:
+
+    \begin{align*}
+        \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 \leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon\lVert \psi \rVert_{L^2}^2.
+    \end{align*}
+
+    Invocando ahora la desigualdad 
+
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\]
+
+    obtenida previamente, tenemos, usando la desigualdad de Poincaré:
+
+    \begin{align*}
+        \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon\lVert \psi \rVert_{L^2}^2\\
+        &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon L\lVert \psi_x \rVert_{L^2}^2\\
+        &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + L C_\varepsilon C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}.
+    \end{align*}
+
+    Aplicamos nuevamente la desigualdad de Young sobre el último sumando:
+
+    \begin{align*}
+        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+        &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + \delta \lVert \varphi_x + \psi \rVert_{L^2}^2 + C_\delta \lVert \psi_t \rVert_{L^2}^2\\
+        \left(\frac{k}{\rho_1} - \varepsilon - \delta \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C_\delta \lVert \psi_t \rVert_{L^2}^2.
+    \end{align*}
+
+    Tomando ahora $\varepsilon + \delta < \frac{k}{\rho_1}$ y dividiendo, podemos agrupar todo en una constante $C^{\prime \prime \prime}$:
+
+    \[\lVert \varphi_x + \psi \rVert_{L^2}^2 \leq C^{\prime \prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C^{\prime \prime \prime} \lVert \psi_t \rVert_{L^2}^2.\]
+
+    Usando una vez más que
+
+    \[\lVert \psi_t \rVert_{L^2}^2 \leq C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}, \]
+
+    y re-utilizando $C$ como una constante estrictamente positiva:
+
+    \[\lVert \varphi_x + \psi \rVert_{L^2}^2 \leq C\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}.\]
+
+    Sustituyendo lo anterior en
+
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2},\]
+
+    obtenemos:
+
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}.\]
+    
+    Finalmente, juntando todos nuestros resultados:
+
+    \begin{align*}
+        \lVert \varphi_t\rVert^2_{L^2},\lVert \psi_t \rVert^2_{L^2} &\leq C \lVert F \rVert_{\mathcal{H}}\lVert U \rVert_{\mathcal{H}},\\
+        \lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq C\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\
+        \lVert \psi_x \rVert_{L^2}^2 &\leq C\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},
+    \end{align*}
+
+    tenemos, invocando por última vez la desigualdad de Young:
+
+    \begin{align*}
+        \lVert U \rVert_{\mathcal{H}}^2 &= k\lVert\varphi_x + \psi \rVert_{L^2}^2 + \rho_1 \lVert \varphi_t \rVert_{L^2}^2 + \rho_2 \lVert \psi_t \rVert_{L^2}^2 + b \lVert \psi_x \rVert_{L^2}^2\\
+        &\leq C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}\\
+        \text{(des. Young)} &\leq C \lVert F \rVert_{L^2}^2 + \frac{1}{2}\lVert U \rVert_{L^2}^2,
+    \end{align*}
+
+    y así
+
+    \[\left(1-\frac{1}{2} \right)\lVert U \lVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq 2C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2,\]
+
+    lo cual concluye la demostración del Lema.
+\end{proof}
+
+\textcolor{red}{TEXTO...}
+
+\begin{Teorema}[Decaimiento exponencial de la solución]
+    \label{ch:TimoshenkoFric:th:estExpSG}
+
+    Supongamos que $\rho_1, \rho_2, b, k > 0$ y $\alpha, \beta > 0$. Entonces la solución $U$ del sistema \eqref{probCauchyHomTimoDosAmortigDesglosado} decae exponencialmente en $\mathcal{H}$, independientemente del dato inicial $U_0$. En otras palabras, el sistema es exponencialmente estable.
+\end{Teorema}
+
+\begin{proof}
+    La prueba sigue inmediatamente de los Lemas \ref{ch:TimoshenkoFric:lemma:resolventeA} y \ref{ch:TimoshenkoFric:lemma:acotacionResolvente}, pues son las hipótesis del Teorema \ref{ch:semigrupos:section:estExp:th:estExpHilbert}. Así, como consecuencia directa de dicho Teorema (y dado que $\mathcal{H}$ es un espacio de Hilbert, como ya se ha recalcado en ocasiones anteriores), el semigrupo \textcolor{red}{$T(t)$} asociado al problema \eqref{probCauchyHomTimoDosAmortigDesglosado} es exponencialmente estable. Por lo tanto, 
+
+    \[\textcolor{red}{U(t) = T(t)U_0}\]
+
+    es exponencialmente estable en $\mathcal{H}$ para cualquier dato inicial $U_0$.
+\end{proof}
+
+\textcolor{red}{TEXTO...}
+
+\begin{Observacion}
+    \label{ch:TimoshenkoFric:obs:estExpSGyestExpEnergia}
+
+    Nótese que la estabilidad de los Teoremas \ref{ch:TimoshenkoFric:th:compExponencial} y \ref{ch:TimoshenkoFric:th:estExpSG} son equivalentes, En efecto, considerando la norma de $\mathcal{H}$ asociada al funcional de energía \ref{normaEnergiaH} tenemos:
+
+    \[\frac{1}{2}\lVert U(t) \rVert_{\mathcal{H}}^2 = E(t) \leq 3E(0) \mathrm{e}^{-\gamma_0 t}, \ t > 0,\]
+
+    y como $\textcolor{red}{U(t) = T(t)U_0}$, entonces
+
+    \[\lVert U(t) \rVert_{\mathcal{H}}^2 = \lVert \textcolor{red}{T(t) U_0} \rVert_{\mathcal{H}}^2 \leq 6\lVert U_0 \rVert_{\mathcal{H}}^2 \mathrm{e}^{-\gamma_0 t}, \ t > 0.\]
+
+    Es decir, la solución $U$ (bien sea débil o fuerte) del problema homogéneo \eqref{probCauchyHomTimoDosAmortigDesglosado} decae exponencialmente en $\mathcal{H}$. El recíproco es inmediato.
+\end{Observacion}
