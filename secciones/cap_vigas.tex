@@ -345,7 +345,7 @@ Esta formulación débil es precisamente la que fundamenta la estructura del esp
 
 Dicho todo lo anterior, veamos ahora una de las propiedades más relevantes del modelo de vigas de Timoshenko. Propiedad que influenciará casi por completo lo que resta de este texto.\\
 
-\begin{Proposicion}{(Conservación de la energía en la viga de Timoshenko)}
+\begin{Proposicion}[Conservación de la energía en la viga de Timoshenko]
     \label{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico}
 
     El funcional de energía definido en \eqref{timoshenkoBasico:funcionalEnergia} verifica:
@@ -547,7 +547,7 @@ es equivalente al producto interno usual de \(\mathcal{H}\). Esta
 caracterización de la norma y del producto interno en términos de la 
 energía facilitará los desarrollos posteriores de esta sección.\\
 
-\begin{Proposicion}{(Producto interno asociado al funcional de energía)}
+\begin{Proposicion}[Producto interno asociado al funcional de energía]
     \label{ch:teoriaVigas:prop:ProdInternoEnergia}
 
     La aplicación $(\cdot, \cdot)_{E} : \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{R}$ definida como
@@ -580,7 +580,7 @@ energía facilitará los desarrollos posteriores de esta sección.\\
 
 Veamos ahora una norma asociada al funcional de energía equivalente a la norma del espacio.\\
 
-\begin{Proposicion}{(Norma asociada al funcional de energía)}
+\begin{Proposicion}[Norma asociada al funcional de energía]
     \label{ch:teoriaVigas:prop:NormaEnergia}
 
     La aplicación $\lVert \, \cdot \, \rVert_{E} : \mathcal{H} \rightarrow \mathbb{R}$ definida como
@@ -633,17 +633,17 @@ Veamos ahora una norma asociada al funcional de energía equivalente a la norma 
 
 Por último, acabamos esta sub-sección con una observación.\\
 
-\begin{Observacion}{(Producto interno y norma en $\mathcal{H}$)}
+\begin{Observacion}[Producto interno y norma en $\mathcal{H}$]
     \label{ch:teoriaVigas:obs:nuevaNorma}
 
-    El producto interno discutido en la Proposición \eqref{ch:teoriaVigas:prop:ProdInternoEnergia} induce la norma asociada al funcional de energía definida en la Proposición \eqref{ch:teoriaVigas:prop:NormaEnergia}. En consecuencia, el producto interno usual de $\mathcal{H}$ y el de la Proposición \eqref{ch:teoriaVigas:prop:ProdInternoEnergia} son equivalentes.
+    El producto interno discutido en la Proposición \ref{ch:teoriaVigas:prop:ProdInternoEnergia} induce la norma asociada al funcional de energía definida en la Proposición \ref{ch:teoriaVigas:prop:NormaEnergia}. En consecuencia, el producto interno usual de $\mathcal{H}$ y el de la Proposición \ref{ch:teoriaVigas:prop:ProdInternoEnergia} son equivalentes.
 \end{Observacion}
 
-A partir de este momento utilizaremos el producto interno y la norma de las Proposiciones \eqref{ch:teoriaVigas:prop:ProdInternoEnergia} y \eqref{ch:teoriaVigas:prop:NormaEnergia} respectivamente. Además, la notación que usaremos para referirnos a ellos será $\lVert \, \cdot \, \rVert_{\mathcal{H}}$ y $(\cdot , \cdot)_{\mathcal{H}}$.
+A partir de este momento utilizaremos el producto interno y la norma de las Proposiciones \ref{ch:teoriaVigas:prop:ProdInternoEnergia} y \ref{ch:teoriaVigas:prop:NormaEnergia} respectivamente. Además, la notación que usaremos para referirnos a ellos será $\lVert \, \cdot \, \rVert_{\mathcal{H}}$ y $(\cdot , \cdot)_{\mathcal{H}}$.
 
 \subsection{Revisitando el funcional de energía}
 \label{ch:teoriaVigas:section:timoshenkoFunc:subsection:energia}
-Cuando se planteó la Proposición \eqref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico}, la demostración asumió que el funcional de energía es derivable respecto al tiempo, y esto no es necesariamente cierto. Por ejemplo, si quisiéramos derivar 
+Cuando se planteó la Proposición \ref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico}, la demostración asumió que el funcional de energía es derivable respecto al tiempo, y esto no es necesariamente cierto. Por ejemplo, si quisiéramos derivar 
 
 \[\int_0^L \big(\varphi_t(x,t)\big)^2 \, \dd x,\]
 
@@ -674,15 +674,15 @@ Por otra parte, y una vez más gracias a considerar que $U \in D(A)$, se tiene q
 
 En consecuencia, la derivada de la integral \eqref{integralFuncionalEnergia} existe cuando consideramos $U \in D(A)$. Repitiendo un análisis similar con cada uno de los sumandos del funcional de energía, llegamos a la siguiente observación.\\
 
-\begin{Observacion}{(Condición para derivar el funcional de energía)}
+\begin{Observacion}[Condición para derivar el funcional de energía]
     \label{ch:teoriaVigas:obs:CondicionDerivadaFuncEnergia}
     
-    La Proposición \eqref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico} sólo tiene sentido cuando se considera $U \in D(A)$.
+    La Proposición \ref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico} sólo tiene sentido cuando se considera $U \in D(A)$.
 \end{Observacion}
 
-La observación anterior es importante, pues si nos valemos únicamente de la Proposición \eqref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico} para demostrar que la energía del sistema permanece constante, entonces estamos restringiéndonos a soluciones fuertes (en el mismo sentido que la Definición \eqref{ch:cauchy:section:noHom:def:soluciones}) del problema \ref{probCauchyHomTimoBasicoDesglosado}. Aunque es cierto que todavía ni siquiera hemos discutido las soluciones del problema (reservamos esto para la siguiente sub-sección \ref{ch:teoriaVigas:section:timoshenkoFunc:subsection:existenciaYUnicidad}), debemos relajar las hipótesis de la Proposición y demostrar que, si consideramos un vector solución débil $U(t)$ cualquiera (de nuevo, en el sentido de la Definición \eqref{ch:cauchy:section:noHom:def:soluciones}), entonces la energía del sistema no cambia con el tiempo.\\
+La observación anterior es importante, pues si nos valemos únicamente de la Proposición \ref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico} para demostrar que la energía del sistema permanece constante, entonces estamos restringiéndonos a soluciones fuertes (en el mismo sentido que la Definición \ref{ch:cauchy:section:noHom:def:soluciones}) del problema \ref{probCauchyHomTimoBasicoDesglosado}. Aunque es cierto que todavía ni siquiera hemos discutido las soluciones del problema (reservamos esto para la siguiente sub-sección \ref{ch:teoriaVigas:section:timoshenkoFunc:subsection:existenciaYUnicidad}), debemos relajar las hipótesis de la Proposición y demostrar que, si consideramos un vector solución débil $U(t)$ cualquiera (de nuevo, en el sentido de la Definición \ref{ch:cauchy:section:noHom:def:soluciones}), entonces la energía del sistema no cambia con el tiempo.\\
 
-\begin{Proposicion}{(Conservación de la energía en la viga de Timoshenko)}
+\begin{Proposicion}[Conservación de la energía en la viga de Timoshenko]
 \label{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasicoRelajado}
 
     Dado un vector solución débil de \eqref{probCauchyHomTimoBasicoDesglosado} $U(t) \in \mathcal{H}$ cualquiera (es decir, un vector $U \in C\big([0, \infty); \mathcal{H} \big)$ tal que $U(0) = U_0$ y que satisface la ecuación \eqref{probCauchyHomTimoBasicoDesglosado}), se tiene que el funcional de energía $E(t)$ \eqref{timoshenkoBasico:funcionalEnergia} verifica que
@@ -692,7 +692,7 @@ La observación anterior es importante, pues si nos valemos únicamente de la Pr
 
 Antes de probar la Proposición anterior, necesitamos demostrar que $A$ es densamente definido en $\mathcal{H}$.\\
 
-\begin{Proposicion}{(El operador $A$ es densamente definido en $\mathcal{H}$)}
+\begin{Proposicion}[El operador $A$ es densamente definido en $\mathcal{H}$]
 \label{ch:teoriaVigas:prop:AesDensamenteDef}
 
     El operador $A$ \eqref{operadorATimoBasico} es densamente definido en $\mathcal{H}$ \eqref{espacioDeFaseTimoshenko}. Es decir,
@@ -790,14 +790,14 @@ Antes de probar la Proposición anterior, necesitamos demostrar que $A$ es densa
     que es lo que deseábamos.
 \end{proof}
 
-Demostrado entonces que $A$ es un operador densamente definido en $\mathcal{H}$, procedemos a probar la Proposición \eqref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasicoRelajado}. 
+Demostrado entonces que $A$ es un operador densamente definido en $\mathcal{H}$, procedemos a probar la Proposición \ref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasicoRelajado}. 
 
-Para ello, nos tomaremos la libertad de asumir que $A$ es el generador infinitesimal de un semigrupo fuertemente continuo $T(t)$ y que, para cada dato inicial $U_0 \in D(A)$, existe una única solución del problema \eqref{probCauchyHomTimoBasicoDesglosado} $U \in C^1\big([0,\infty); \mathcal{H}\big) \cap C\big([0,\infty); D(A)\big)$, donde $U(t) = T(t)U_0 \in D(A) \ \forall t \geq 0$. Podemos tomarnos esta licencia dado que en la siguiente sub-sección probaremos dicho resultado (véase \eqref{ch:teoriaVigas:prop:existenciaYUnicidad}). Así, pues, damos pie a la demostración.
+Para ello, nos tomaremos la libertad de asumir que $A$ es el generador infinitesimal de un semigrupo fuertemente continuo $\mathrm{e}^{At}$ y que, para cada dato inicial $U_0 \in D(A)$, existe una única solución del problema \eqref{probCauchyHomTimoBasicoDesglosado} $U \in C^1\big([0,\infty); \mathcal{H}\big) \cap C\big([0,\infty); D(A)\big)$, donde $U(t) = \mathrm{e}^{At}U_0 \in D(A) \ \forall t \geq 0$. Podemos tomarnos esta licencia dado que en la siguiente sub-sección probaremos dicho resultado (véase \ref{ch:teoriaVigas:prop:existenciaYUnicidad}). Así, pues, damos pie a la demostración.
 
 \begin{proof}
-    De acuerdo a la Proposición \eqref{ch:teoriaVigas:prop:AesDensamenteDef}, se tiene que $A$ es densamente definido. En consecuencia, $D(A)$ es denso en $\mathcal{H}$ y eso significa que existe una sucesión $\Big(U_0^{(n)}\Big) \subset D(A)$ tal que $U^{(n)} \rightarrow U_0 \in \mathcal{H}$. Asimismo, para cada $U_0^{(n)}$ existe una solución al problema \eqref{probCauchyHomTimoBasicoDesglosado} $U^{(n)} \in C^1\big([0,\infty); \mathcal{H}\big) \cap C\big([0,\infty); D(A) \big)$.
+    De acuerdo a la Proposición \ref{ch:teoriaVigas:prop:AesDensamenteDef}, se tiene que $A$ es densamente definido. En consecuencia, $D(A)$ es denso en $\mathcal{H}$ y eso significa que existe una sucesión $\Big(U_0^{(n)}\Big) \subset D(A)$ tal que $U^{(n)} \rightarrow U_0 \in \mathcal{H}$. Asimismo, para cada $U_0^{(n)}$ existe una solución al problema \eqref{probCauchyHomTimoBasicoDesglosado} $U^{(n)} \in C^1\big([0,\infty); \mathcal{H}\big) \cap C\big([0,\infty); D(A) \big)$.
 
-    Por la Proposición \eqref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico}, tenemos que
+    Por la Proposición \ref{ch:teoriaVigas:prop:ConservacionEnergiaTimoshenkoBasico}, tenemos que
 
     \[\frac{\dd}{\dd t}E\big(U^{(n)}(t)\big) = 0 \ \forall t \geq 0,\]
 
@@ -805,7 +805,7 @@ Para ello, nos tomaremos la libertad de asumir que $A$ es el generador infinites
 
     \[E\big(U^{(n)}(t)\big) = E\big(U^{(n)}_0\big) \ \forall t \geq 0.\]
 
-    Utilizando la norma asociada al funcional de energía \eqref{ch:teoriaVigas:prop:NormaEnergia}, se desprende entonces de la igualdad anterior que
+    Utilizando la norma asociada al funcional de energía \ref{ch:teoriaVigas:prop:NormaEnergia}, se desprende entonces de la igualdad anterior que
 
     \[\big\lVert U^{(n)}(t)\big)\rVert_{\mathcal{H}} = \big\lVert U^{(n)}_0\big\rVert_{\mathcal{H}} \ \forall t \geq 0.\]
 
@@ -829,11 +829,11 @@ Para ello, nos tomaremos la libertad de asumir que $A$ es el generador infinites
 
     \[\big \lVert U^{(n)}(t) - U^{(m)}(t) \big \rVert_{\mathcal{H}} < \varepsilon, \ \forall t \geq 0.\]
 
-    En consecuencia, $\big( U^{(n)}\big)$ es Cauchy. Luego, teniendo en cuenta que $U^{(n)}(t) = T(t)U_0^{(n)}$, se tiene que:
+    En consecuencia, $\big( U^{(n)}\big)$ es Cauchy. Luego, teniendo en cuenta que $U^{(n)}(t) = \mathrm{e}^{At}U_0^{(n)}$, se tiene que:
 
-    \[\big\lVert U^{(n)}(t) - U(t)\big\rVert_{\mathcal{H}} = \big\lVert T(t)U_0^{(n)} - U(t)\big\rVert_{\mathcal{H}} \rightarrow 0\]
+    \[\big\lVert U^{(n)}(t) - U(t)\big\rVert_{\mathcal{H}} = \big\lVert \mathrm{e}^{At}U_0^{(n)} - U(t)\big\rVert_{\mathcal{H}} \rightarrow 0\]
 
-    cuando $n \rightarrow \infty$, pues $U_0^{(n)} \rightarrow U_0$ y, por unicidad de las soluciones, $T(t)U_0^{(n)} \rightarrow T(t)U_0 = U(t)$. Luego, por unicidad del límite y por ser Cauchy la sucesión, hemos logrado probar que
+    cuando $n \rightarrow \infty$, pues $U_0^{(n)} \rightarrow U_0$ y, por unicidad de las soluciones, $\mathrm{e}^{At}U_0^{(n)} \rightarrow \mathrm{e}^{At}U_0 = U(t)$. Luego, por unicidad del límite y por ser Cauchy la sucesión, hemos logrado probar que
 
     \[U^{(n)}(t) \rightarrow U(t)\]
     
@@ -853,9 +853,9 @@ Para ello, nos tomaremos la libertad de asumir que $A$ es el generador infinites
 
 Una vez formalizado el marco funcional en el que estaremos trabajando, y habiendo aportado el debido rigor a los asuntos que rodean al funcional de energía, podemos pasar ahora, finalmente, a discutir la existencia y unicidad de soluciones del problema \eqref{probCauchyHomTimoBasicoDesglosado}.
 
-En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéneo, las soluciones al mismo son, simplemente, las de la Definición \eqref{ch:cauchy:section:Hom:def:soluciones}. Ahora, para probar la existencia y unicidad de dichas soluciones, debemos probar que el operador $A$ es el generador infinitesimal de un semigrupo fuertemente continuo (que resultará ser de contracciones). Para ello, usamos las siguientes Proposiciones:
+En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéneo, las soluciones al mismo son, simplemente, las de la Definición \ref{ch:cauchy:section:Hom:def:soluciones}. Ahora, para probar la existencia y unicidad de dichas soluciones, debemos probar que el operador $A$ es el generador infinitesimal de un semigrupo fuertemente continuo (que resultará ser de contracciones). Para ello, usamos las siguientes Proposiciones:
 
-\begin{Proposicion}{(El operador $A$ es disipativo)}
+\begin{Proposicion}[El operador $A$ es disipativo]
 \label{ch:teoriaVigas:prop:AesDisipativo}
 
     El operador $A : D(A) \rightarrow \mathcal{H}$ \eqref{operadorATimoBasico} es disipativo.
@@ -939,7 +939,7 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
     y así $A$ es disipativo, que es lo que queríamos probar.
 \end{proof}
 
-\begin{Proposicion}{(El operador $(I - A)$ es sobreyectivo)}
+\begin{Proposicion}[El operador $(I - A)$ es sobreyectivo]
 \label{ch:teoriaVigas:prop:ResolventeEsSobreyect}
     El operador $(I-A) : D(A) \rightarrow \mathcal{H}$ es sobreyectivo, o lo que es lo mismo, $R(I-A) = \mathcal{H}$.
 \end{Proposicion}
@@ -1149,7 +1149,7 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
     Así, para cualquier $F \in \mathcal{H}$, existe $U \in D(A)$ tal que resuelve el sistema $(I-A)U = F$. Además, la unicidad de $U$ se deduce de la unicidad de las soluciones al problema variacional (débil). Por lo tanto el operador $(I-A)$ es sobreyectivo, tal y como queríamos probar.
 \end{proof}
 
-\begin{Teorema}{(Existencia y unicidad de soluciones)}
+\begin{Teorema}[Existencia y unicidad de soluciones]
 \label{ch:teoriaVigas:prop:existenciaYUnicidad}
     El problema de valor inicial \eqref{pviTimoshenkoBasico} (planteado también en \eqref{probCauchyHomTimoBasico} como un problema abstracto de Cauchy homogéneo) posee una única solución débil
 
@@ -1166,17 +1166,17 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
 
     Por último, sin importar la regularidad de la solución se tiene que esta es de la forma
 
-    \[U(T) = T(t)U_0,\]
+    \[U(T) = \mathrm{e}^{At}U_0,\]
 
-    donde $T(t)$ es el semigrupo generado por $A$.
+    donde $\mathrm{e}^{At}$ es el semigrupo generado por $A$.
 \end{Teorema}
 
 \begin{proof}
-    Utilizando el segundo punto del Teorema de Lumer-Phillips \eqref{ch:semigrupos:th:LumerPhillips} tenemos que, gracias a la Proposición \eqref{ch:teoriaVigas:prop:AesDisipativo} ($A$ es disipativo) y a la Proposición \eqref{ch:teoriaVigas:prop:ResolventeEsSobreyect} ($(I-A)$ es sobreyectivo), entonces $A$ es el generador infinitesimal de un semigrupo fuertemente continuo de contracciones.
+    Utilizando el segundo punto del Teorema de Lumer-Phillips \ref{ch:semigrupos:th:LumerPhillips} tenemos que, gracias a la Proposición \ref{ch:teoriaVigas:prop:AesDisipativo} ($A$ es disipativo) y a la Proposición \ref{ch:teoriaVigas:prop:ResolventeEsSobreyect} ($(I-A)$ es sobreyectivo), entonces $A$ es el generador infinitesimal de un semigrupo fuertemente continuo de contracciones.
 
     Dado que $A$ es el generador de un semigrupo fuertemente continuo de contracciones, y gracias a que el sistema de Timoshenko \eqref{pviTimoshenkoBasico} se puede plantear como un problema abstracto de Cauchy homogéneo tenemos, por lo discutido en la introducción del capítulo sobre problemas abstractos de Cauchy (véase \ref{ch:cauchy:section:Hom}), que este siempre posee soluciones débiles (es decir, de clase $C\big([0,\infty);\mathcal{H}\big)$) únicas (por cada dato inicial del problema homogéneo $U_0$) de la forma 
 
-    $U(t) = T(t)U_0,$
+    $U(t) = \mathrm{e}^{At}U_0,$
 
-    donde $T(t)$ es el semigrupo generado por $A$. Asimismo, si $U_0 \in D(A)$, entonces el Teorema \eqref{cauchy:hom:ExistenciaYUnicidadFuerte} garantiza que existe una única solución fuerte (entiéndase, de clase $C^1\big([0,\infty);\mathcal{H}\big) \cap C\big([0,\infty) ; D(A)\big)$) por cada dato inicial. 
+    donde $\mathrm{e}^{At}$ es el semigrupo generado por $A$. Asimismo, si $U_0 \in D(A)$, entonces el Teorema \ref{cauchy:hom:ExistenciaYUnicidadFuerte} garantiza que existe una única solución fuerte (entiéndase, de clase $C^1\big([0,\infty);\mathcal{H}\big) \cap C\big([0,\infty) ; D(A)\big)$) por cada dato inicial. 
 \end{proof}

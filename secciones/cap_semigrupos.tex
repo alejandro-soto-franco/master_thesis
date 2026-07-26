@@ -15,7 +15,7 @@ En el caso particular que $E_0 = F_0$, escribiremos $L(E_0)$ para referirnos a $
 \footnotetext{Por el Teorema de representación de Riesz-Fréchet \ref{ch:preliminares:th:rieszFrechet}, todo espacio de Hilbert $H$ se identifica isométricamente con su dual $H^*$, de modo que emplearemos esta misma notación para el producto escalar de $H$.}
 Demos inicio a esta sección definiendo el objeto matemático central de este capítulo: los \textit{semigrupos de operadores lineales}.\\
 
-\begin{Definicion}{(Semigrupo de operadores lineales)}
+\begin{Definicion}[Semigrupo de operadores lineales]
 \label{ch:semigrupos:def:semigrupo}
 
 Un \textit{semigrupo de operadores lineales} en $E_0$ es una familia de operadores de $L(E_0)$ indexados por un parámetro $t$, $\{T(t) : t \geq 0\} \subset L(E_0)$, tal que:
@@ -39,7 +39,7 @@ En la condición $2.$ hemos utilizado $\circ$ para referirnos a la composición 
 
 Veamos ahora que todo semigrupo fuertemente continuo posee una cota exponencial, la cual viene dada por el siguiente teorema.\\
 
-\begin{Teorema}{(Cota exponencial de semigrupos fuertemente continuos)}
+\begin{Teorema}[Cota exponencial de semigrupos fuertemente continuos]
 \label{ch:semigrupos:th:cotaExp}
 
 Sea $\{T(t), t \geq 0 \} \subset L(E_0)$ un semigrupo fuertemente continuo. Entonces, existen $M \geq 1$ y $\beta$ tales que
@@ -89,7 +89,7 @@ Donde en la última desigualdad hemos utilizado que si $\beta$ es positiva, el m
 
 Otro objeto clave en la teoría de semigrupos es el de \textit{generador infinitesimal}, que interpreta el papel de la ``derivada de un semigrupo''. Nos reservaremos esta clase de intuiciones para más adelante en el texto, y por el momento nos mantendremos en un marco abstracto y riguroso. Así, continuamos con la definición de generador infinitesimal:\\
 
-\begin{Definicion}{(Generador infinitesimal de semigrupos fuertemente continuos de operadores lineales)}
+\begin{Definicion}[Generador infinitesimal de semigrupos fuertemente continuos de operadores lineales]
 \label{ch:semigrupos:def:generador}
 
 Sea $\{T(t), t \geq 0\} \subset L(E_0)$ un semigrupo fuertemente continuo de operadores lineales, entonces se denotará como su \textit{generador infinitesimal} al operador definido por
@@ -103,7 +103,7 @@ donde se definen
 
 A continuación se recogen algunos hechos importantes sobre semigrupos fuertemente continuos.\\
 
-\begin{Teorema}{(Resultados sobre semigrupos fuertemente continuos)}
+\begin{Teorema}[Resultados sobre semigrupos fuertemente continuos]
 \label{ch:semigrupos:th:resSemiFuerteCont}
 
 Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
@@ -338,7 +338,7 @@ Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
 
 Terminamos esta sección con un resultado de unicidad:\\
 
-\begin{Teorema}{(Unicidad del semigrupo fuertemente continuo dado su generador)}
+\begin{Teorema}[Unicidad del semigrupo fuertemente continuo dado su generador]
     \label{ch:semigrupos:th:unicidadSemigrupos}
     
     Sean $\{T(t), t\geq 0\}$ y $\{S(t), t\geq 0\}$ semigrupos fuertemente continuos con generadores infinitesimales $A$ y $B$ respectivamente. Si $A = B$, entonces $T(t) = S(t), \, t\geq 0$.
@@ -367,7 +367,7 @@ Terminamos esta sección con un resultado de unicidad:\\
 
 \textcolor{red}{PONER PARA QUÉ SIRVE ESTO}
 
-\begin{Teorema}{(Teorema de Hille-Yosida)}
+\begin{Teorema}[Teorema de Hille-Yosida]
     \label{ch:semigrupos:th:HilleYosida}
     
     Supongamos que $A : D(A) \subset E_0 \rightarrow E_0$ es un operador lineal. Entonces los siguientes enunciados son equivalentes:
@@ -678,7 +678,7 @@ Ambas condiciones del teorema anterior, $1.$ y $2.$, dependen de la elección de
 
 \textcolor{red}{PONER AQUÍ QUE ESA NORMA ES EQUIVALENTE, ETC, Y QUE PERMITE PASAR A LA NORMA QUE HABILITA EL TEOREMA ANTERIOR}\\
 
-\begin{Teorema}{(Forma General del Teorema de Hille-Yosida)}
+\begin{Teorema}[Forma General del Teorema de Hille-Yosida]
     \label{ch:semigrupos:th:HilleYosidaGeneral}
     Sea $A : D(A) \subset E_0 \rightarrow E_0$ un operador lineal. Las siguientes afirmaciones son equivalentes
 
@@ -775,7 +775,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
 \textcolor{red}{TEXTO TEXTO TEXTO}\\
 
-\begin{Teorema}{(Teorema de Lumer-Phillips)}
+\begin{Teorema}[Teorema de Lumer-Phillips]
     \label{ch:semigrupos:th:LumerPhillips}
     Sea $A$ un operador lineal densamente definido en un espacio de Banach $E_0$.
 
@@ -871,14 +871,12 @@ A continuación, recordamos la definición de un \textit{operador simétrico} y 
     Sea $H$ un espacio de Hilbert con producto escalar $\langle \cdot, \cdot \rangle_H$, entonces identificamos $H$ y $H^*$ y denotamos a ambos por $H$.
 \end{Definicion}
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
 \begin{Definicion}[Operador Auto-adjunto]
     \label{ch:semigrupos:def:OpAutoAdj}
     Sea $H$ un espacio de Hilbert con producto escalar $\langle \cdot, \cdot \rangle_H$. Un operador $A : D(A) \subset H \rightarrow H$ es simétrico si $\overline{D(A)} = H$ y $A \subset A^*$; esto es $\langle Ae, f \rangle_H = \langle e, Af \rangle_H$ para todo $e,f \in D(A)$. Se tiene que $A$ es auto-adjunto si $A = A^*$.
 \end{Definicion}
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
 \begin{Corolario}
     \label{ch:semigrupos:cor:CorolarioLumerPhillips}
@@ -933,7 +931,7 @@ A continuación, recordamos la definición de un \textit{operador simétrico} y 
 
 En mucho ejemplos, la técnica utilizada para verificar que las estimativas espectrales necesarias para garantizar que un operador $A$ es el generador de un semigrupo fuertemente continuo de operadores se obtiene mediante el conocimiento de la llamada \textit{imagen numérica}, que se define a continuación.
 
-\begin{Definicion}{(Imágen numérica de un operador)}
+\begin{Definicion}[Imágen numérica de un operador]
     \label{ch:semigrupos:def:imgNumerica}
 
     Sea $A$ un operador lineal en un espacio de Banach complejo $E_0$. Se define la imágen numérica de $A$, $W(A)$, como el conjunto:
@@ -945,9 +943,8 @@ En mucho ejemplos, la técnica utilizada para verificar que las estimativas espe
     \[W(A) = \Big \{\langle Ae, e\rangle : e \in D(A), \lVert e \rVert_{E_0} = 1 \Big \}.\]
 \end{Definicion}
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
-\begin{Teorema}{(Relaciones entre $W(A)$ con $\lambda - A$)}
+\begin{Teorema}[Relaciones entre $W(A)$ con $\lambda - A$]
     \label{ch:semigrupos:th:ImgNumerica}
 
     Sea $A : D(A) \subset E_0 \rightarrow E_0$ un operador cerrado densamente definido. Sea $W(A)$ la imágen numérica de $A$, y $\Sigma$ un subconjunto abierto y conexo en $\mathbb{C} \setminus W(A)$. Si $\lambda \not \in \overline{W(A)}$, entonces $\lambda - A$ es uno-a-uno (inyectiva) y su imagen $R(\lambda - A)$ es cerrada. Además satisface:
@@ -1004,9 +1001,8 @@ En mucho ejemplos, la técnica utilizada para verificar que las estimativas espe
     Finalmente, por un argumento idéntico al hecho en la prueba del punto $2$ del Teorema de Lumer-Phillips \ref{ch:semigrupos:th:LumerPhillips}, se tiene que $\lambda \in \rho(A)$ y, por lo tanto, $\rho(A) \cap \Sigma$ es cerrado en $\Sigma$. Se sigue entonces que $\rho(A) \cap \Sigma = \Sigma$; es decir, $\rho(A) \supset \Sigma$, como queríamos probar.
 \end{proof}
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
-\begin{Proposicion}{(Un operador simétrico y sobreyectivo es auto-adjunto)}
+\begin{Proposicion}[Un operador simétrico y sobreyectivo es auto-adjunto]
     \label{ch:semigrupos:prop:simetricoSobreyectivoAutoadjunto}
     Sea $H$ un espacio de Hilbert y $A : D(A) \subset H \rightarrow H$ un operador simétrico y sobreyectivo. Se tiene entonces que $A$ es auto-adjunto.
 \end{Proposicion}
@@ -1049,9 +1045,8 @@ Adicionalmente, si $\lambda \in \Sigma_a$, entonces
 
 Lo anterior se puede comprobar haciendo una representación gráfica de la situación geométrica y empleando trigonometría básica. Esto completa entonces la prueba.
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
-\begin{Teorema}{Propiedades de los operadores disipativos}
+\begin{Teorema}[Propiedades de los operadores disipativos]
     \label{ch:semigrupos:th:PropsOpDisipativos}
 
     Sea $A$ un operador disipativo en $E_0$, entonces:
@@ -1113,9 +1108,8 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 \end{proof}
 \footnotetext{Por el Teorema \ref{ch:preliminares:prop:cerrable}, se tiene que $A$ es cerrable sí y sólo si para cualquier sucesión $(e_n) \subset D(A)$ tal que $e_n \rightarrow 0$, y $Ae_n \rightarrow f \in E_0$, entonces $f = 0$.}
 
-\textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
-\begin{Teorema}{(Disipatividad y reflexividad)}
+\begin{Teorema}[Disipatividad y reflexividad]
     \label{ch:semigrupos:th:DisipYReflex}
 
     Sea $A$ un operador disipativo con $R(I - A) = E_0$. Si $E_0$ es reflexivo\footnotemark, entonces $\overline{D(A)} = E_0$.
@@ -1255,7 +1249,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 
 \textcolor{red}{TEXTO}\\
 
-\begin{Definicion}{(Semigrupo dual)}
+\begin{Definicion}[Semigrupo dual]
     \label{ch:semigrupos:section:dual:def:sgDual}
 
     Sea $\{T(t) : t \geq 0\}$ un $C_0$-semigrupo de operadores lineales. Se define el \textit{semigrupo dual} como $\{T(t)^* : t \geq 0\}$, donde $T(t)^*$ es el operador adjunto de $T(t)$.
@@ -1295,7 +1289,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
 \textcolor{red}{TEXTO}
 
-\begin{Definicion}{(Generador del semigrupo dual)}
+\begin{Definicion}[Generador del semigrupo dual]
     \label{ch:semigrupos:section:dual:def:genSgDual}
 
     A pesar de que el semigrupo dual $\{T(t)^* : t \geq 0\}$ no es necesariamente fuertemente continuo en $E_0^*$, aún así se le puede asociar un generador. En efecto, definiendo:
@@ -1319,7 +1313,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
 \textcolor{red}{TEXTO}\\
 
-\begin{Definicion}{(Parte de un operador en un subespacio)}
+\begin{Definicion}[Parte de un operador en un subespacio]
     \label{ch:semigrupos:section:dual:def:parteDeSubesp}
 
     Sea $S$ un operador lineal en $E_0$, y sea $F_0$ un subespacio de $E_0$. El operador $\overline{S}$ definido por $D(\overline{S})$, donde
@@ -1331,7 +1325,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
 \textcolor{red}{HABLAR DE CÓMO EL TEOREMA ARREGLA LOS PROBLEMAS CON EL SEMIGRUPO DUAL...}\\
 
-\begin{Teorema}{Semigrupo sun dual}
+\begin{Teorema}[Semigrupo sun dual]
     \label{ch:semigrupos:section:dual:th:SunDual}
 
     Sea $\{T(t) : t \geq 0 \}$ un semigrupo fuertemente continuo en $E_0$ con generador infinitesimal $A$ y $\{T(t)^* : t \geq 0 \}$ el semigrupo dual.
@@ -1375,7 +1369,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
 \textcolor{red}{TEXTO...}\\
 
-\begin{Corolario}{Semigrupo dual en espacio reflexivo}
+\begin{Corolario}[Semigrupo dual en espacio reflexivo]
     \label{ch:semigrupos:section:dual:cor:dualReflex}
 
     Sea $E_0$ un espacio de Banach reflexivo y $\{T(t) : t \geq 0\}$ un $C_0$-semigrupo en $E_0$ con generador infinitesimal $A$. Entonces, el semigrupo dual $\{T(t)^* : t \geq 0\}$ de $\{T(t) : t \geq 0\}$ es un $C_0$-semigrupo cuyo generador infinitesimal es $A^*$.

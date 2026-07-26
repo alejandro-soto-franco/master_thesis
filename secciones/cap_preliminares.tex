@@ -29,7 +29,7 @@ funcional: la de espacio normado. Los objetos centrales del texto, los espacios
 de Banach y de Hilbert, se obtienen al añadir a esta estructura una hipótesis de
 completitud y, en el caso de Hilbert, un producto interno.\\
 
-\begin{Definicion}{(Espacio normado)}
+\begin{Definicion}[Espacio normado]
 \label{ch:preliminares:def:espacioNormado}
 
 Sea $E$ un espacio vectorial sobre $\mathbb{K}$. Una \textit{norma} en $E$ es una
@@ -50,7 +50,7 @@ Una misma estructura vectorial admite, en general, muchas normas. La siguiente
 noción identifica aquellas que inducen la misma topología y, por tanto, las
 mismas nociones de convergencia y continuidad.\\
 
-\begin{Definicion}{(Normas equivalentes)}
+\begin{Definicion}[Normas equivalentes]
 \label{ch:preliminares:def:normasEquivalentes}
 
 Dos normas $\lVert \cdot \rVert_1$ y $\lVert \cdot \rVert_2$ sobre un mismo
@@ -73,7 +73,7 @@ infinita.
 Fijada una norma, disponemos ya de una noción de proximidad y, con ella, de
 convergencia.\\
 
-\begin{Definicion}{(Convergencia en un espacio normado)}
+\begin{Definicion}[Convergencia en un espacio normado]
 \label{ch:preliminares:def:convergencia}
 
 Sea $(E, \lVert \cdot \rVert)$ un espacio normado. Se dice que una sucesión
@@ -86,7 +86,7 @@ $\lVert e_n - e \rVert < \varepsilon$ para todo $n \geq N$. En tal caso, el
 límite $e$ es único y se escribe $e_n \rightarrow e$.
 \end{Definicion}
 
-\begin{Definicion}{(Sucesión de Cauchy)}
+\begin{Definicion}[Sucesión de Cauchy]
 \label{ch:preliminares:def:cauchy}
 
 Sea $(E, \lVert \cdot \rVert)$ un espacio normado. Una sucesión
@@ -99,7 +99,7 @@ Toda sucesión convergente es de Cauchy; el recíproco, en cambio, puede fallar.
 espacios en los que sí se cumple, y que resultan ser el marco adecuado para la
 teoría, reciben un nombre propio.\\
 
-\begin{Definicion}{(Espacio de Banach)}
+\begin{Definicion}[Espacio de Banach]
 \label{ch:preliminares:def:banach}
 
 Un espacio normado $(E, \lVert \cdot \rVert)$ se dice \textit{completo}, o bien un
@@ -124,7 +124,7 @@ Los objetos que relacionan unos espacios normados con otros son las aplicaciones
 lineales. En dimensión infinita, la linealidad ya no implica la continuidad, de
 modo que ambas propiedades deben tratarse por separado.\\
 
-\begin{Definicion}{(Operador lineal)}
+\begin{Definicion}[Operador lineal]
 \label{ch:preliminares:def:operadorLineal}
 
 Sean $E$ y $F$ dos espacios vectoriales sobre $\mathbb{K}$. Una aplicación
@@ -136,7 +136,7 @@ de $E$ llamado \textit{dominio} de $T$, es un \textit{operador lineal} si
 Cuando $D(T) = E$, se dice que $T$ está \textit{definido en todo} $E$.
 \end{Definicion}
 
-\begin{Definicion}{(Operador acotado, continuo y compacto)}
+\begin{Definicion}[Operador acotado, continuo y compacto]
 \label{ch:preliminares:def:operadorAcotado}
 
 Sean $E$ y $F$ espacios normados y $T : E \rightarrow F$ un operador lineal. Se
@@ -159,7 +159,7 @@ El conjunto de todos los operadores lineales y acotados de $E$ en $F$ admite a s
 vez una estructura de espacio normado; esta construcción es la que sostiene, en
 particular, la teoría de semigrupos del Capítulo \ref{ch:semigrupos}.\\
 
-\begin{Definicion}{(Espacio de operadores lineales acotados)}
+\begin{Definicion}[Espacio de operadores lineales acotados]
 \label{ch:preliminares:def:espacioOperadores}
 
 Sean $E$ y $F$ dos espacios normados sobre $\mathbb{K}$. Se denota por $L(E, F)$
@@ -177,7 +177,7 @@ El siguiente resultado, de uso constante, establece que para operadores lineales
 las nociones de continuidad y de acotación coinciden, y que basta comprobar la
 continuidad en el origen.\\
 
-\begin{Teorema}{(Continuidad y acotación de operadores lineales)}
+\begin{Teorema}[Continuidad y acotación de operadores lineales]
 \label{ch:preliminares:th:continuoAcotado}
 
 Sean $E$ y $F$ espacios normados y $T : E \rightarrow F$ un operador lineal.
@@ -220,7 +220,7 @@ espacio normado ``se incluye de forma continua'' en otro; será la herramienta c
 la que se enuncien más adelante las inmersiones de Sobolev
 (Sección \ref{ch:preliminares:section:sobolev}).\\
 
-\begin{Definicion}{(Inmersión continua)}
+\begin{Definicion}[Inmersión continua]
 \label{ch:preliminares:def:inmersion}
 
 Sean $(E, \lVert \cdot \rVert_E)$ y $(F, \lVert \cdot \rVert_F)$ dos espacios
@@ -234,7 +234,7 @@ existe una constante $C \geq 0$ tal que
 
 Antes de finalizar la sección, refinamos ligeramente la definición anterior motivados, de nuevo, por las inmersiones de Sobolev que enunciaremos luego (Sección \ref{ch:preliminares:section:sobolev}); más específicamente, este refinamiento será útil para algunos casos concretos de las inmersiones. Así, pues, definimos la inmersión compacta:\\
 
-\begin{Definicion}{(Inmersión compacta)}
+\begin{Definicion}[Inmersión compacta]
 \label{ch:preliminares:def:inmersionCompacta}
 
 Sean $(E, \lVert \cdot \rVert_E)$ y $(F, \lVert \cdot \rVert_F)$ dos espacios
@@ -250,7 +250,7 @@ Un caso particular de la construcción anterior, obtenido al tomar como espacio 
 llegada el propio cuerpo de escalares, da lugar al espacio dual, cuya importancia
 en el estudio de los operadores es difícil de exagerar.\\
 
-\begin{Definicion}{(Espacio dual)}
+\begin{Definicion}[Espacio dual]
 \label{ch:preliminares:def:dual}
 
 Sea $E$ un espacio normado sobre $\mathbb{K}$. Su \textit{dual topológico} es el
@@ -268,7 +268,7 @@ análogamente.
 La aplicación que envía cada elemento de un espacio a su evaluación sobre los
 funcionales del dual permite comparar un espacio con su bidual.\\
 
-\begin{Definicion}{(Espacio reflexivo)}
+\begin{Definicion}[Espacio reflexivo]
 \label{ch:preliminares:def:reflexivo}
 
 Sea $E$ un espacio de Banach y sea $J : E \rightarrow E^{**}$ la
@@ -284,7 +284,7 @@ conjunto de funcionales que alcanzan la norma sobre él; interviene de manera
 esencial en la caracterización de los operadores disipativos
 (Definición \ref{ch:semigrupos:def:OpDisipativo}).\\
 
-\begin{Definicion}{(Aplicación de dualidad)}
+\begin{Definicion}[Aplicación de dualidad]
 \label{ch:preliminares:def:dualidad}
 
 Sea $E$ un espacio de Banach sobre $\mathbb{K}$. La \textit{aplicación de
@@ -305,7 +305,7 @@ y una noción de proyección. Los espacios de Hilbert, completos respecto de la
 norma inducida por dicho producto, constituyen el marco natural de gran parte del
 texto.\\
 
-\begin{Definicion}{(Producto interno)}
+\begin{Definicion}[Producto interno]
 \label{ch:preliminares:def:productoInterno}
 
 Sea $H$ un espacio vectorial sobre $\mathbb{K}$. Un \textit{producto interno} en
@@ -323,7 +323,7 @@ prehilbertiano}. La aplicación $\lVert e \rVert := \langle e, e \rangle^{1/2}$
 define una norma sobre $H$, la \textit{norma inducida} por el producto interno.
 \end{Definicion}
 
-\begin{Proposicion}{(Propiedades del producto interno)}
+\begin{Proposicion}[Propiedades del producto interno]
 \label{ch:preliminares:prop:propProductoInterno}
 
 Sea $(H, \langle \cdot, \cdot \rangle)$ un espacio prehilbertiano con norma
@@ -357,7 +357,7 @@ $\langle e_n, f \rangle$,
 pues $(\lVert e_n \rVert)$ es acotada por ser convergente.
 \end{proof}
 
-\begin{Definicion}{(Espacio de Hilbert)}
+\begin{Definicion}[Espacio de Hilbert]
 \label{ch:preliminares:def:hilbert}
 
 Un espacio prehilbertiano $(H, \langle \cdot, \cdot \rangle)$ que es completo
@@ -370,7 +370,7 @@ La estructura de Hilbert se preserva al formar sumas directas, hecho que se
 empleará en el estudio de la energía de los sistemas de Timoshenko
 (Capítulo \ref{ch:teoriaVigas}).\\
 
-\begin{Proposicion}{(Suma directa de espacios de Hilbert)}
+\begin{Proposicion}[Suma directa de espacios de Hilbert]
 \label{ch:preliminares:prop:sumaDirecta}
 
 Sean $H_1, H_2, \ldots$ espacios de Hilbert sobre $\mathbb{K}$. El espacio
@@ -389,7 +389,7 @@ dual y es, sin duda, uno de los pilares de la teoría; interviene, entre otros
 lugares, al justificar la notación del producto escalar mediante la dualidad
 (Capítulo \ref{ch:semigrupos}).\\
 
-\begin{Teorema}{(Representación de Riesz-Fréchet)}
+\begin{Teorema}[Representación de Riesz-Fréchet]
 \label{ch:preliminares:th:rieszFrechet}
 
 Sea $H$ un espacio de Hilbert real y sea $\varphi \in H^*$. Entonces existe un
@@ -411,7 +411,7 @@ reflexividad de todo espacio de Hilbert, propiedad que se invoca al estudiar la
 disipatividad en espacios reflexivos
 (Teorema \ref{ch:semigrupos:th:DisipYReflex}).\\
 
-\begin{Teorema}{(Todo espacio de Hilbert es reflexivo)}
+\begin{Teorema}[Todo espacio de Hilbert es reflexivo]
 \label{ch:preliminares:th:hilbertReflexivo}
 
 Todo espacio de Hilbert $H$ es reflexivo.
@@ -451,7 +451,7 @@ ecuaciones de evolución de los capítulos posteriores.
 \subsection{Espacios $L^p$}
 \label{ch:preliminares:subsection:Lp}
 
-\begin{Definicion}{(Exponentes conjugados)}
+\begin{Definicion}[Exponentes conjugados]
 \label{ch:preliminares:def:conjugados}
 
 Sea $p \in [1, \infty]$. Se llama \textit{exponente conjugado} de $p$ al único
@@ -462,7 +462,7 @@ $p' \in [1, \infty]$ que satisface
 con los convenios $1' = \infty$ y $\infty' = 1$.
 \end{Definicion}
 
-\begin{Definicion}{(Espacio $L^p$)}
+\begin{Definicion}[Espacio $L^p$]
 \label{ch:preliminares:def:Lp}
 
 Sea $p \in [1, \infty)$. Se define $L^p(\Omega)$ como el espacio de (clases de
@@ -486,7 +486,7 @@ Hölder, $\lVert fg \rVert_{L^1} \leq \lVert f \rVert_{L^p} \lVert g \rVert_{L^{
 (\cite[Teorema~4.6]{brezis-2011-fun-ana-sob}), cuya demostración descansa a su vez
 en la siguiente desigualdad numérica.\\
 
-\begin{Proposicion}{(Desigualdad de Young)}
+\begin{Proposicion}[Desigualdad de Young]
 \label{ch:preliminares:prop:young}
 
 Sean $a, b \geq 0$ y $p, p' \in (1, \infty)$ exponentes conjugados. Entonces
@@ -503,7 +503,7 @@ del logaritmo y por ser $\tfrac{1}{p} + \tfrac{1}{p'} = 1$,
 y basta aplicar la monotonía de la exponencial.
 \end{proof}
 
-\begin{Proposicion}{(Desigualdad de Young generalizada)}
+\begin{Proposicion}[Desigualdad de Young generalizada]
 \label{ch:preliminares:prop:youngGen}
 
 Sean $a, b \geq 0$, $p, p' \in (1, \infty)$ exponentes conjugados y
@@ -525,7 +525,7 @@ Un hecho de importancia capital, empleado de forma recurrente en argumentos de
 aproximación, es que las funciones regulares con soporte compacto son densas en
 $L^p$ para $p$ finito.\\
 
-\begin{Proposicion}{(Densidad de $C_c$ en $L^p$)}
+\begin{Proposicion}[Densidad de $C_c$ en $L^p$]
 \label{ch:preliminares:prop:densidadCc}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $p \in [1, \infty)$. Entonces el espacio
@@ -537,7 +537,7 @@ en $L^p(\Omega)$.
 Véase \cite[Teorema~4.12]{brezis-2011-fun-ana-sob}.
 \end{proof}
 
-\begin{Proposicion}{(Densidad de $C_c^\infty$ en $L^p$)}
+\begin{Proposicion}[Densidad de $C_c^\infty$ en $L^p$]
 \label{ch:preliminares:prop:densidadCcInf}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $p \in [1, \infty)$. Entonces el espacio
@@ -556,7 +556,7 @@ La formulación variacional de las ecuaciones en derivadas parciales exige
 sustituir la derivada clásica por una noción más débil, compatible con la
 integración por partes. Comenzamos, pues, recordando la derivada débil.\\
 
-\begin{Definicion}{(Derivada débil)}
+\begin{Definicion}[Derivada débil]
 \label{ch:preliminares:def:derivadaDebil}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $u \in L^1_{\mathrm{loc}}(\Omega)$. Se
@@ -569,7 +569,7 @@ En tal caso $g_i$ es única salvo igualdad en casi todo punto, y se escribe
 $\partial_{x_i} u := g_i$.
 \end{Definicion}
 
-\begin{Definicion}{(Espacio de Sobolev)}
+\begin{Definicion}[Espacio de Sobolev]
 \label{ch:preliminares:def:sobolev}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $p \in [1, \infty]$. El \textit{espacio
@@ -584,7 +584,7 @@ norma
 $p = 2$ se escribe $H^1(\Omega) := W^{1,2}(\Omega)$.
 \end{Definicion}
 
-\begin{Proposicion}{($H^1$ es un espacio de Hilbert)}
+\begin{Proposicion}[$H^1$ es un espacio de Hilbert]
 \label{ch:preliminares:prop:H1Hilbert}
 
 Para todo $p \in [1, \infty]$, $W^{1,p}(\Omega)$ es un espacio de Banach. Además,
@@ -600,7 +600,7 @@ Véase \cite[Proposición~8.1]{brezis-2011-fun-ana-sob}.
 Para imponer condiciones de contorno de tipo Dirichlet se recurre al subespacio
 de funciones que se anulan, en un sentido débil, sobre la frontera.\\
 
-\begin{Definicion}{($H_0^1$ y $W_0^{1,p}$)}
+\begin{Definicion}[$H_0^1$ y $W_0^{1,p}$]
 \label{ch:preliminares:def:H01}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $p \in [1, \infty)$. Se define
@@ -609,7 +609,7 @@ $W^{1,p}(\Omega)$. En el caso $p = 2$ se escribe
 $H_0^1(\Omega) := W_0^{1,2}(\Omega)$.
 \end{Definicion}
 
-\begin{Lema}{(Densidad de $W_0^{1,p}$ en $L^p$)}
+\begin{Lema}[Densidad de $W_0^{1,p}$ en $L^p$]
 \label{ch:preliminares:lema:W0denso}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $p \in [1, \infty)$. Entonces
@@ -627,7 +627,7 @@ El siguiente resultado, que compara los espacios de Sobolev con espacios de
 funciones de mejor regularidad o mayor integrabilidad, es esencial en las
 estimaciones de energía del Capítulo \ref{ch:teoriaVigas}.\\
 
-\begin{Teorema}{(Inmersiones de Sobolev)}
+\begin{Teorema}[Inmersiones de Sobolev]
 \label{ch:preliminares:th:inmersionesSobolev}
 
 Sea $\Omega \subseteq \R^N$ un abierto con frontera suficientemente regular
@@ -661,7 +661,7 @@ además una escala de inmersiones compactas entre los espacios $H^k$. Son las qu
 intervienen al comprobar que el operador de Timoshenko tiene resolvente compacto
 (Capítulo \ref{ch:TimoshenkoFric}).\\
 
-\begin{Proposicion}{(Inmersiones compactas en un intervalo acotado)}
+\begin{Proposicion}[Inmersiones compactas en un intervalo acotado]
 \label{ch:preliminares:prop:inmersionesCompactasIntervalo}
 
 Sea $I \subseteq \R$ un intervalo acotado. Entonces
@@ -707,7 +707,7 @@ Cerramos la sección con la conmutatividad de las derivadas débiles, versión
 distribucional del teorema clásico de Schwarz sobre la igualdad de las derivadas
 parciales cruzadas.\\
 
-\begin{Teorema}{(Teorema de Schwarz distribucional)}
+\begin{Teorema}[Teorema de Schwarz distribucional]
 \label{ch:preliminares:th:schwarz}
 
 Sea $\Omega \subseteq \R^N$ un abierto y $u \in L^1_{\mathrm{loc}}(\Omega)$ tal
@@ -740,7 +740,7 @@ El primero de ellos, el teorema de Hahn-Banach, garantiza la existencia de
 funcionales lineales continuos con propiedades prescritas y es el que dota de
 contenido a la teoría de la dualidad.\\
 
-\begin{Teorema}{(Teorema de Hahn-Banach, forma analítica)}
+\begin{Teorema}[Teorema de Hahn-Banach, forma analítica]
 \label{ch:preliminares:th:hahnBanach}
 
 Sea $E$ un espacio vectorial sobre $\R$ y $p : E \rightarrow \R$ una aplicación
@@ -755,7 +755,7 @@ $f(e) \leq p(e)$ para todo $e \in E$.
 Véase \cite[Teorema~1.1]{brezis-2011-fun-ana-sob}.
 \end{proof}
 
-\begin{Corolario}{(Corolario del teorema de Hahn-Banach)}
+\begin{Corolario}[Corolario del teorema de Hahn-Banach]
 \label{ch:preliminares:cor:hahnBanach}
 
 Sea $E$ un espacio de Banach y $F \subseteq E$ un subespacio lineal con
@@ -783,7 +783,7 @@ garantiza que la aplicación de dualidad
 
 El teorema de Baire es la herramienta común a los tres resultados que siguen.\\
 
-\begin{Teorema}{(Teorema de Baire)}
+\begin{Teorema}[Teorema de Baire]
 \label{ch:preliminares:th:baire}
 
 Sea $X$ un espacio métrico completo no vacío y $(X_n)_{n \geq 1}$ una sucesión de
@@ -799,7 +799,7 @@ Véase \cite[Teorema~2.1]{brezis-2011-fun-ana-sob}.
 El principio de acotación uniforme afirma que una familia de operadores acotada
 puntualmente lo está también uniformemente.\\
 
-\begin{Teorema}{(Teorema de Banach-Steinhaus)}
+\begin{Teorema}[Teorema de Banach-Steinhaus]
 \label{ch:preliminares:th:banachSteinhaus}
 
 Sean $E$ y $F$ espacios de Banach y $(T_i)_{i \in I} \subseteq L(E, F)$ una
@@ -820,7 +820,7 @@ Los dos resultados siguientes, consecuencia ambos del teorema de Baire
 (Teorema \ref{ch:preliminares:th:baire}), relacionan
 las propiedades algebraicas de un operador con su continuidad.\\
 
-\begin{Teorema}{(Teorema de la aplicación abierta)}
+\begin{Teorema}[Teorema de la aplicación abierta]
 \label{ch:preliminares:th:aplicacionAbierta}
 
 Sean $E$ y $F$ espacios de Banach y $T \in L(E, F)$ un operador suprayectivo.
@@ -836,7 +836,7 @@ Para enunciar el teorema del gráfico cerrado recordamos la noción de operador
 cerrado, central en el tratamiento de los generadores infinitesimales, que en
 general no son continuos.\\
 
-\begin{Definicion}{(Operador cerrado y operador cerrable)}
+\begin{Definicion}[Operador cerrado y operador cerrable]
 \label{ch:preliminares:def:cerrado}
 
 Sean $E$ y $F$ espacios de Banach y $T : D(T) \subseteq E \rightarrow F$ un
@@ -849,7 +849,7 @@ $Te_n \rightarrow f$ en $F$ se tiene $e \in D(T)$ y $Te = f$. Se dice que $T$ es
 es su \textit{clausura} $\overline{T}$, cuyo gráfico es $\overline{G(T)}$.
 \end{Definicion}
 
-\begin{Teorema}{(Teorema del gráfico cerrado)}
+\begin{Teorema}[Teorema del gráfico cerrado]
 \label{ch:preliminares:th:graficoCerrado}
 
 Sean $E$ y $F$ espacios de Banach y $T : E \rightarrow F$ un operador lineal
@@ -864,7 +864,7 @@ La siguiente caracterización de la cerrabilidad, empleada al estudiar los
 operadores disipativos (Teorema \ref{ch:semigrupos:th:PropsOpDisipativos}),
 admite una prueba directa.\\
 
-\begin{Proposicion}{(Caracterización de operadores cerrables)}
+\begin{Proposicion}[Caracterización de operadores cerrables]
 \label{ch:preliminares:prop:cerrable}
 
 Sean $E$ y $F$ espacios de Banach y $T : D(T) \subseteq E \rightarrow F$ un
@@ -892,7 +892,7 @@ extiende a $T$, y $T$ es cerrable.
 El teorema de Banach-Alaoglu proporciona la compacidad que suple, en dimensión
 infinita, la ausencia de compacidad de la bola unidad en la topología fuerte.\\
 
-\begin{Teorema}{(Teorema de Banach-Alaoglu)}
+\begin{Teorema}[Teorema de Banach-Alaoglu]
 \label{ch:preliminares:th:banachAlaoglu}
 
 Sea $E$ un espacio de Banach. La bola unidad cerrada
@@ -913,7 +913,7 @@ operador permite identificar el límite débil de las imágenes. Es el argumento
 se emplea al probar que un operador disipativo con imagen densa está densamente
 definido (Teorema \ref{ch:semigrupos:th:DisipYReflex}).\\
 
-\begin{Teorema}{(Compacidad débil sucesional y operadores cerrados)}
+\begin{Teorema}[Compacidad débil sucesional y operadores cerrados]
 \label{ch:preliminares:th:compacidadDebilCerrado}
 
 Sea $E$ un espacio de Banach reflexivo.
@@ -952,7 +952,7 @@ $(e,f) \in G(A)$; esto es, $e \in D(A)$ y $Ae = f$.
 En el marco hilbertiano, el teorema de Lax-Milgram resuelve formas bilineales
 coercivas y es la herramienta habitual para las formulaciones variacionales.\\
 
-\begin{Teorema}{(Teorema de Lax-Milgram)}
+\begin{Teorema}[Teorema de Lax-Milgram]
 \label{ch:preliminares:th:laxMilgram}
 
 Sea $H$ un espacio de Hilbert real y $a : H \times H \rightarrow \R$ una forma
@@ -974,7 +974,7 @@ Finalmente, la desigualdad de Poincaré controla la norma de una función por la
 su gradiente sobre dominios acotados, y es la que confiere coercividad a las
 formas asociadas al operador de Timoshenko.\\
 
-\begin{Teorema}{(Desigualdad de Poincaré)}
+\begin{Teorema}[Desigualdad de Poincaré]
 \label{ch:preliminares:th:poincare}
 
 \begin{enumerate}
@@ -1013,7 +1013,7 @@ funciones vectoriales por medio de la integral de Bochner, herramienta
 imprescindible al derivar e integrar las órbitas $t \mapsto T(t)e$ de un
 semigrupo.
 
-\begin{Teorema}{(Convergencia dominada de Lebesgue)}
+\begin{Teorema}[Convergencia dominada de Lebesgue]
 \label{ch:preliminares:th:dominada}
 
 Sea $(\Omega, \Sigma, \mu)$ un espacio de medida y $(f_n)_{n \geq 1}$ una sucesión
@@ -1039,7 +1039,7 @@ Para funciones con valores en un espacio de Banach $X$, la noción adecuada de
 integral es la de Bochner. El primer resultado la reduce, en la práctica, a una
 condición de integrabilidad escalar.\\
 
-\begin{Teorema}{(Integrabilidad de Bochner)}
+\begin{Teorema}[Integrabilidad de Bochner]
 \label{ch:preliminares:th:bochner}
 
 Sean $(\Omega, \Sigma, \mu)$ un espacio de medida finita, $X$ un espacio de
@@ -1058,7 +1058,7 @@ Finalmente, la integral de Bochner admite un teorema de convergencia dominada
 enteramente análogo al escalar, que es el que legitima los intercambios de
 límite e integral en las órbitas de un semigrupo.\\
 
-\begin{Teorema}{(Convergencia dominada para la integral de Bochner)}
+\begin{Teorema}[Convergencia dominada para la integral de Bochner]
 \label{ch:preliminares:th:bochnerDominada}
 
 Sean $X$ un espacio de Banach, $f : \Omega \rightarrow X$ fuertemente medible y

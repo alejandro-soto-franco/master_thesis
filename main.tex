@@ -109,16 +109,37 @@
 %% -----------------------------------------------
 % Entornos matemáticos
 %% -----------------------------------------------
-\theoremstyle{definition}
+% Estilos de enunciado. El título opcional se compone automáticamente entre
+% paréntesis y el cuerpo empieza en una línea nueva: basta escribir
+% \begin{Teorema}[Título] y no hace falta ni paréntesis ni salto explícitos.
+\newtheoremstyle{asfdefinicion}% nombre
+  {\topsep}{\topsep}%           espacio antes / después
+  {\normalfont}{}%              cuerpo / sangrado
+  {\bfseries}{.}%               cabecera / puntuación
+  {\newline}{}%                 salto tras la cabecera / formato por defecto
+
+\newtheoremstyle{asfplain}
+  {\topsep}{\topsep}
+  {\itshape}{}
+  {\bfseries}{.}
+  {\newline}{}
+
+\newtheoremstyle{asfobservacion}
+  {\topsep}{\topsep}
+  {\normalfont}{}
+  {\itshape}{.}
+  {\newline}{}
+
+\theoremstyle{asfdefinicion}
 \newtheorem{Definicion}{Definición}[chapter]
 
-\theoremstyle{plain}
+\theoremstyle{asfplain}
 \newtheorem{Teorema}{Teorema}[chapter]
 \newtheorem{Proposicion}{Proposición}[chapter]
 \newtheorem{Lema}[Teorema]{Lema}
 \newtheorem{Corolario}[Teorema]{Corolario}
 
-\theoremstyle{remark}
+\theoremstyle{asfobservacion}
 \newtheorem{Observacion}{Observación}[chapter]
 
 % Estilo: Cambia el simbolo de QED por un cuadrado negro
