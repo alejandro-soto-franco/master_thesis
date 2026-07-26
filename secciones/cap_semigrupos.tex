@@ -1288,7 +1288,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \begin{Observacion}
     \label{ObsC0Dual}
 
-    A pesar de que $T(t)^*$ es un semigrupo, no necesariamente es un $C_0$-semigrupo (véase \cite[5.14]{engel-1999-one-sem-lin}).
+    A pesar de que $T(t)^*$ es un semigrupo, no necesariamente es un $C_0$-semigrupo (véase \cite[Par.~I.1.13]{engel-2006-sho-cou-ope}).
 
     Como consecuencia, es importante notar también que $A^*$ no necesariamente está densamente definido en $E_0^*$.
 \end{Observacion}
@@ -1314,7 +1314,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
     \[A^\sigma e^* = A^*e^*.\]
 
-    Véase \cite[2.5]{engel-1999-one-sem-lin} para un estudio más riguroso.
+    Véase \cite[Par.~II.2.5]{engel-2006-sho-cou-ope} para un estudio más riguroso.
 \end{Definicion}
 
 \textcolor{red}{TEXTO}\\
@@ -1442,5 +1442,15 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \end{Teorema}
 
 \begin{proof}
-    \textcolor{red}{ACABAR}\\
+    Véase \cite[Teorema~1.3.2]{liu-1999-sem-ass-dis}. El resultado se debe a Gearhart \cite{gearhart-1978-spe-the-con} y a Prüss \cite{pruss-1984-spe-c-0}, cuyos enunciados cubren semigrupos fuertemente continuos generales sobre un espacio de Hilbert; la versión para semigrupos de contracciones que aquí empleamos es la que recoge la referencia citada.
 \end{proof}
+
+\begin{Observacion}
+    \label{ch:semigrupos:section:estExp:obs:supVsLimite}
+
+    La segunda condición se enuncia a menudo como
+
+    \[\limsup_{\lvert \lambda \rvert \rightarrow \infty}\lVert (i\lambda I - A)^{-1}\rVert_{L(H)} < \infty,\]
+
+    y ambas formulaciones son equivalentes en presencia de la primera. En efecto, si $i\mathbb{R} \subset \rho(A)$, la aplicación $\lambda \mapsto \lVert (i\lambda I - A)^{-1}\rVert_{L(H)}$ es continua sobre $\mathbb{R}$ y, por tanto, acotada sobre cada compacto; una cota para $\lvert \lambda \rvert$ grande basta entonces para acotar el supremo sobre todo $\mathbb{R}$. Esta observación es la que permite aplicar el Teorema anterior a la cota que se obtiene en el Lema \ref{ch:TimoshenkoFric:lemma:acotacionResolvente}.
+\end{Observacion}
