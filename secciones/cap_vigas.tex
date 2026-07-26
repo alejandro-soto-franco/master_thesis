@@ -283,7 +283,7 @@ Dado que estamos manejando una única dimensión espacial, el hecho de que $\psi
 
 \begin{align*}
     \left (\int_0^L |\psi_x(x,t)| \, \dd x \right )^2 &= \left (\int_0^L |1 \cdot \psi_x(x,t)| \, \dd x \right )^2\\
-    \text{(Cauchy–Schwarz)} &\leq \left (\int_0^L |\psi_x(x,t)|^2 \, \dd x \right ) \left (\int_0^L dx \right )\\
+    \text{(Cauchy–Schwarz)} &\leq \left (\int_0^L |\psi_x(x,t)|^2 \, \dd x \right ) \left (\int_0^L \dd x \right )\\
     &= L \int_0^L |\psi_x(x,t)|^2 \, \dd x < \infty.
 \end{align*}
 
@@ -457,7 +457,7 @@ donde $A$ es un operador lineal diferencial definido como:
     \end{pmatrix}.
 \end{align}
 
-Obtengamos ahora el dominio del operador $A \in L(\mathcal{H})$. Para ello, consideramos $U \in \mathcal{H}$ y se debe verificar que $AU \in \mathcal{H}$. Es decir,
+Obtengamos ahora el dominio del operador $A : D(A) \subset \mathcal{H} \rightarrow \mathcal{H}$. Para ello, consideramos $U \in \mathcal{H}$ y se debe verificar que $AU \in \mathcal{H}$. Es decir,
 
 \[AU = 
 \begin{pmatrix}
@@ -855,7 +855,7 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
 
     entonces
 
-    \[AU = \left(\varphi_t, \frac{k}{\rho_1}\varphi_{xx} + \frac{k}{\rho_1}\psi_x, \psi_t, -\frac{k}{\rho_2}\varphi_x + \frac{b}{\rho_2}\psi{xx} - \frac{k}{\rho_2}\psi \right).\]
+    \[AU = \left(\varphi_t, \frac{k}{\rho_1}\varphi_{xx} + \frac{k}{\rho_1}\psi_x, \psi_t, -\frac{k}{\rho_2}\varphi_x + \frac{b}{\rho_2}\psi_{xx} - \frac{k}{\rho_2}\psi \right).\]
 
     Tomando esto en cuenta, se tiene que
 
@@ -912,7 +912,7 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
         \begin{cases}
             \varphi - \varphi_t &= f_1\\
             -\frac{k}{\rho_1}\varphi_{xx} + \varphi_t - \frac{k}{\rho_1}\psi_x &= f_2\\
-            \psi - \psi_t &= f_2\\
+            \psi - \psi_t &= f_3\\
             \frac{k}{\rho_2}\varphi_x - \frac{b}{\rho_2}\psi_{xx} + \frac{k}{\rho_2}\psi + \psi_t &= f_4.
         \end{cases}
     \end{equation}
@@ -1021,8 +1021,8 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
     \begin{align*}
         0 &\leq (a - b)^2\\
         2ab &\leq a^2 + b^2\\
-        a^2 + 2ab + b^2 &\leq a^2 + b^2\\
-        (a+b)^2 &\leq a^2 + b^2.
+        a^2 + 2ab + b^2 &\leq 2a^2 + 2b^2\\
+        (a+b)^2 &\leq 2\big(a^2 + b^2\big).
     \end{align*}
 
     Aplicándola a la desigualdad obtenida, se obtiene:
@@ -1035,25 +1035,25 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
 
     Así, se tiene que
 
-    \[a\big((\varphi, \psi), (\varphi, \psi)\big) \geq C \big( \lVert \varphi \rVert^2_{L^2} + \lVert \psi \rVert_{L^2}^2 + \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x + \psi \rVert_{L^2}^2 \big) > 0,\]
+    \[a\big((\varphi, \psi), (\varphi, \psi)\big) \geq C \big( \lVert \varphi \rVert^2_{L^2} + \lVert \psi \rVert_{L^2}^2 + \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x + \psi \rVert_{L^2}^2 \big) \geq 0,\]
 
     y en consecuencia, utilizando además el resultado obtenido anteriormente:
 
     \begin{align*}
-        a\big((\varphi, \psi), (\varphi, \psi)\big) &> C \lVert \psi_x \rVert^2_{L^2},\\
-        a\big((\varphi, \psi), (\varphi, \psi)\big) &> C\big(\lVert \varphi_x + \psi \rVert_{L^2} + \lVert \psi \rVert_{L^2} \big) > \frac{1}{2}C \lVert \varphi_x \rVert^2_{L^2}.
+        a\big((\varphi, \psi), (\varphi, \psi)\big) &\geq C \lVert \psi_x \rVert^2_{L^2},\\
+        a\big((\varphi, \psi), (\varphi, \psi)\big) &\geq C\big(\lVert \varphi_x + \psi \rVert^2_{L^2} + \lVert \psi \rVert^2_{L^2} \big) \geq \frac{1}{2}C \lVert \varphi_x \rVert^2_{L^2}.
     \end{align*}
 
     Así, sumando ambas desigualdades se tiene que:
 
     \begin{align*}
-        2a\big((\varphi, \psi), (\varphi, \psi)\big) &> C \lVert \psi_x \rVert^2_{L^2} + \frac{1}{2}C \lVert \varphi_x \rVert^2_{L^2} \geq \frac{C}{2}\big( \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x \rVert^2_{L^2} \big)\\
-        \implies a\big((\varphi, \psi), (\varphi, \psi)\big) &>\frac{C}{4}\big( \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x \rVert^2_{L^2} \big).
+        2a\big((\varphi, \psi), (\varphi, \psi)\big) &\geq C \lVert \psi_x \rVert^2_{L^2} + \frac{1}{2}C \lVert \varphi_x \rVert^2_{L^2} \geq \frac{C}{2}\big( \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x \rVert^2_{L^2} \big)\\
+        \implies a\big((\varphi, \psi), (\varphi, \psi)\big) &\geq \frac{C}{4}\big( \lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_x \rVert^2_{L^2} \big).
     \end{align*}
 
     Finalmente, esto da como resultado:
 
-    \[a\big((\varphi, \psi), (\varphi, \psi)\big) >\frac{C}{4}\big( \lVert \psi \rVert^2_{H^1_0} + \lVert \varphi \rVert^2_{_{H^1_0}} \big) > \frac{C}{4}\lVert (\varphi, \psi) \rVert^2_{H_0^1 \times H_0^1},\]
+    \[a\big((\varphi, \psi), (\varphi, \psi)\big) \geq \frac{C}{4}\big( \lVert \psi \rVert^2_{H^1_0} + \lVert \varphi \rVert^2_{H^1_0} \big) = \frac{C}{4}\lVert (\varphi, \psi) \rVert^2_{H_0^1 \times H_0^1},\]
 
     lo cual prueba que $a$ es coerciva.
 
@@ -1077,7 +1077,7 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
 
     \[(\varphi_x + \psi)_x = k^{-1}\rho_1(f_1 + f_2) - k^{-1}\rho_1\varphi,\]
 
-    y, como $f_1, \varphi \in H_0^1(0,L) \subset L^2(0,L)$ y $f_2 \in L^2(0,L)$, entonces $(\varphi_x + \psi)_x \in H_0^1(0,L)$. Esto implica, en particular, que
+    y, como $f_1, \varphi \in H_0^1(0,L) \subset L^2(0,L)$ y $f_2 \in L^2(0,L)$, entonces $(\varphi_x + \psi)_x \in L^2(0,L)$. Esto implica, en particular, que
 
     \[\varphi_{xx} \in L^2(0,L).\]
 
@@ -1089,16 +1089,16 @@ En primer lugar, dado que estamos ante un problema de Cauchy abstracto homogéne
 
     \[\psi \in H^2(0,L) \cap H_0^1(0,L).\]
 
-    Así, hemos conseguido probar que $\varphi, \psi \in H^2(0,L) \cap H_0^1(0,L)$. Queda probar únicamente que $\varphi_t, \psi_t \in L^2(0,L)$. Para ello, observamos que se verifican (considerando las derivadas en un sentido distribucional) las ecuaciones:
+    Así, hemos conseguido probar que $\varphi, \psi \in H^2(0,L) \cap H_0^1(0,L)$. Queda probar únicamente que $\varphi_t, \psi_t \in H_0^1(0,L)$. Para ello, observamos que se verifican (considerando las derivadas en un sentido distribucional) las ecuaciones:
 
     \begin{align*}
         \varphi_t &= \varphi - f_1\\
         \psi_t &= \psi - f_3,
     \end{align*}
 
-    y como $\varphi, \psi \in H^2(0,L) \cap H_0^1(0,L) \subset L^2(0,L)$, y $f_1, f_3 \in H_0^1(0,L) \subset L^2(0,L)$, entonces
+    y como $\varphi, \psi \in H^2(0,L) \cap H_0^1(0,L) \subset H_0^1(0,L)$, y $f_1, f_3 \in H_0^1(0,L)$, entonces
 
-    \[\varphi_t, \psi_t \in L^2(0,L).\]
+    \[\varphi_t, \psi_t \in H_0^1(0,L).\]
 
     Así, para cualquier $F \in \mathcal{H}$, existe $U \in D(A)$ tal que resuelve el sistema $(I-A)U = F$. Además, la unicidad de $U$ se deduce de la unicidad de las soluciones al problema variacional (débil). Por lo tanto el operador $(I-A)$ es sobreyectivo, tal y como queríamos probar.
 \end{proof}

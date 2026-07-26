@@ -280,7 +280,7 @@ Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
 
     Probemos entonces que la norma de $R(\lambda)$ es acotada cuando $\operatorname{Re}(\lambda) > \beta$, donde $\beta$ viene dado por el Teorema \ref{ch:semigrupos:th:cotaExp}:
     \begin{align*}
-        ||R(\lambda)||_{L(E_0)} = \sup_{\substack{e \in E_0 \\ e \neq 0}} \frac{||R(\lambda)||_{E_0}}{||e||_{E_0}} &\leq \frac{\left | \left | \int_0^{\infty}\mathrm{e}^{-\lambda t}T(t)e \, \dd t \right | \right |_{E_0}}{||e||_{E_0}}\\
+        ||R(\lambda)||_{L(E_0)} = \sup_{\substack{e \in E_0 \\ e \neq 0}} \frac{||R(\lambda)e||_{E_0}}{||e||_{E_0}} &\leq \frac{\left | \left | \int_0^{\infty}\mathrm{e}^{-\lambda t}T(t)e \, \dd t \right | \right |_{E_0}}{||e||_{E_0}}\\
         &\leq \frac{\int_0^{\infty}|\mathrm{e}^{-\lambda t}| \, ||T(t)e||_{E_0} \, \dd t}{||e||_{E_0}}\\
         \text{(Teorema \ref{ch:semigrupos:th:cotaExp})}&\leq \frac{M ||e||_{E_0} \int_0^\infty \mathrm{e}^{-(\operatorname{Re}(\lambda) - \beta)t} \, \dd t}{||e||_{E_0}}\\
         \text{(}\operatorname{Re}(\lambda) > \beta\text{)}&\leq \frac{M}{\operatorname{Re}(\lambda) - \beta}.
@@ -314,7 +314,7 @@ Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
 
     \[\frac{\big(T(h) - I\big)}{h}R(\lambda)e \rightarrow \lambda R(\lambda) e - e, \text{ cuando } h\rightarrow 0^+. \]
 
-    En consecuencia, $R(\lambda) \in D(A)$ como queríamos demostrar. Además,
+    En consecuencia, $R(\lambda)e \in D(A)$ como queríamos demostrar. Además,
 
     \[
         (\lambda - A)R(\lambda)e = \lambda R(\lambda)e - AR(\lambda)e = \lambda R(\lambda)e - (\lambda R(\lambda)e - e) = e,
@@ -418,7 +418,7 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
     Por otra parte,
 
     \begin{align*}
-        &||T_1(t)||_{L(E_0)} = ||T(t) \mathrm{e}^{-\omega t}||_{L(E_0)} = \mathrm{e}^{-\omega t} ||T(t)||_{L(E_0)} \leq \mathrm{e}^{-\omega t}\\
+        &||T_1(t)||_{L(E_0)} = ||T(t) \mathrm{e}^{-\omega t}||_{L(E_0)} = \mathrm{e}^{-\omega t} ||T(t)||_{L(E_0)} \leq \mathrm{e}^{-\omega t}\mathrm{e}^{\omega t} = 1\\
         \implies& ||T_1(t)||_{L(E_0)} \leq 1,
     \end{align*}
 
@@ -520,7 +520,7 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
 
     \begin{align*}
         ||\mathrm{e}^{tA_\lambda}||_{L(E_0)} &= ||\mathrm{e}^{t(\lambda^2(\lambda - A)^{-1} - \lambda I)}||_{L(E_0)}\\
-        &=||\mathrm{e}^{\lambda t}\mathrm{e}^{t\lambda^2(\lambda - A)^{-1}}||_{L(E_0)}\\
+        &=||\mathrm{e}^{-\lambda t}\mathrm{e}^{t\lambda^2(\lambda - A)^{-1}}||_{L(E_0)}\\
         &=\mathrm{e}^{-\lambda t} ||\mathrm{e}^{t\lambda^2(\lambda - A)^{-1}}||_{L(E_0)},
     \end{align*}
 
@@ -691,7 +691,7 @@ Ambas condiciones del teorema anterior, $1.$ y $2.$, dependen de la elección de
 
         \item $A$ es cerrado, densamente definido y su conjunto resolvente $\rho(A)$ contiene al intervalo $(\beta, \infty)$. Además:
 
-        \[||(\lambda I - A)^{-n}||_{L(E_0)} \leq \frac{M}{\lambda - \beta}, \quad \forall \lambda > \beta, \, n = 1,2,\cdots .\]
+        \[||(\lambda I - A)^{-n}||_{L(E_0)} \leq \frac{M}{(\lambda - \beta)^n}, \quad \forall \lambda > \beta, \, n = 1,2,\cdots .\]
     \end{enumerate}
 \end{Teorema}
 
@@ -826,7 +826,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
     \[0 = \lVert (\lambda_0 - A)e \rVert_{E_0} \geq \lambda_0 \lVert e \rVert_{E_0} \implies \lambda_0 \lVert e \rVert_{E_0} = 0,\]
 
-    y como $\lambda_0 > 0$, entonces $\lVert e \rVert_{E_0} = 0$, lo que implica que $e = 0$ y así $(\lambda_0 - A)$ es inyectivo. En consecuencia $(\lambda_0 - A)$ es una biyección y, por corolario del \textcolor{green}{Teorema de la función abierta}, es también un operador continuo. Luego $\lambda_0 \in \rho(A)$.
+    y como $\lambda_0 > 0$, entonces $\lVert e \rVert_{E_0} = 0$, lo que implica que $e = 0$ y así $(\lambda_0 - A)$ es inyectivo. En consecuencia $(\lambda_0 - A)$ es una biyección y, por corolario del \textcolor{green}{Teorema de la función abierta}, su inversa $(\lambda_0 - A)^{-1}$ es un operador continuo. Luego $\lambda_0 \in \rho(A)$.
 
     Considerando ahora $(e_n) \subset D(A)$ tal que $e_n \rightarrow e$ y $Ae_n \rightarrow f$. Entonces, por continuidad:
 
@@ -1008,7 +1008,8 @@ En mucho ejemplos, la técnica utilizada para verificar que las estimativas espe
 
 \textcolor{red}{METER AQUI UN SALTO DE LINEA}\\
 
-\begin{Proposicion}{}{Operador simétrico es auto-adjunto}
+\begin{Proposicion}{(Un operador simétrico y sobreyectivo es auto-adjunto)}
+    \label{ch:semigrupos:prop:simetricoSobreyectivoAutoadjunto}
     Sea $H$ un espacio de Hilbert y $A : D(A) \subset H \rightarrow H$ un operador simétrico y sobreyectivo. Se tiene entonces que $A$ es auto-adjunto.
 \end{Proposicion}
 
@@ -1040,7 +1041,7 @@ Para probar lo anterior, empezamos hallando la imágen numérica de $A$,
 
 \[W(A) = \{\langle Ae, e \rangle : e \in D(A), \lVert e \rVert_{H} = 1\} \subset (-\infty, a].\]
 
-Nótese que $\langle Au, u \rangle \leq a\langle u, u \rangle \implies \langle (A - a) u, u \rangle \leq 0 \implies \operatorname{Re}\langle (A - a) u, u \rangle \leq 0,$ por lo que $A-a = A^* - a$ son operadores disipativos. Así, por el Corolario \ref{ch:semigrupos:cor:CorolarioLumerPhillips}, $A-a$ genera un semigrupo fuertemente continuo de contracciones. Por ser un semigrupo fuertemente continuo de contracciones y por ser $A-a$ su generador, el punto $5$ del Teorema \ref{ch:semigrupos:th:resSemiFuerteCont} garantiza que $\rho(A-a) \supset (0, \infty)$. Esto significa que si consideramos $\mu \in (0, \infty)$, entonces $\mu - (A-a)$ es una biyección. Reorganizando y nombrando $\lambda = \mu + a$ obtenemos que el operador $\lambda - A$ es una biyección y, en consecuencia, $\rho(A) \supset (a, \infty)$. Como $(a, \infty)$ es un subconjunto abierto y conexo en $\mathbb{C} \setminus W(A)$, entonces $\mathbb{C} \setminus [a, \infty) \subset \rho(A)$ por el Teorema \ref{ch:semigrupos:th:ImgNumerica}. Asimismo, y también por el Teorema anterior,
+Nótese que $\langle Au, u \rangle \leq a\langle u, u \rangle \implies \langle (A - a) u, u \rangle \leq 0 \implies \operatorname{Re}\langle (A - a) u, u \rangle \leq 0,$ por lo que $A-a = A^* - a$ son operadores disipativos. Así, por el Corolario \ref{ch:semigrupos:cor:CorolarioLumerPhillips}, $A-a$ genera un semigrupo fuertemente continuo de contracciones. Por ser un semigrupo fuertemente continuo de contracciones y por ser $A-a$ su generador, el punto $5$ del Teorema \ref{ch:semigrupos:th:resSemiFuerteCont} garantiza que $\rho(A-a) \supset (0, \infty)$. Esto significa que si consideramos $\mu \in (0, \infty)$, entonces $\mu - (A-a)$ es una biyección. Reorganizando y nombrando $\lambda = \mu + a$ obtenemos que el operador $\lambda - A$ es una biyección y, en consecuencia, $\rho(A) \supset (a, \infty)$. Como $(a, \infty)$ es un subconjunto abierto y conexo en $\mathbb{C} \setminus W(A)$, entonces $\mathbb{C} \setminus (-\infty, a] \subset \rho(A)$ por el Teorema \ref{ch:semigrupos:th:ImgNumerica}. Asimismo, y también por el Teorema anterior,
 
 \[\lVert (\lambda - A)^{-1} \rVert_{L(H)} \leq \frac{1}{d(\lambda, W(A))} \leq \frac{1}{d(\lambda, (-\infty, a])}.\]
 
@@ -1062,7 +1063,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 
         \item Si $A$ es cerrable\footnotemark, entonces su clausura $\overline{A}$ también es un operador disipativo.
 
-        \item Si $\overline{D(A)} = E$ entonces $A$ es cerrable.
+        \item Si $\overline{D(A)} = E_0$ entonces $A$ es cerrable.
     \end{enumerate}
 \end{Teorema}
 \footnotetext{Decimos que un operador lineal $A : D(A) \subset E_0 \rightarrow E_0$ es \textit{cerrable} si existe otro operador lineal $\overline{A}$ tal que $G(A) \subset G(\overline{A}), \overline{A}|_{D(A)} = A, \overline{G(A)} = G(\overline{A})$, donde $G(T)$ es el grafo (también llamado el gráfico o la gráfica) de $T$.}
@@ -1149,7 +1150,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 \end{Lema}
 
 \begin{proof}
-    Para todo $e^* \in E_0^*$, $\langle e^*, Se \rangle$ es un funcional lineal continuo. En consecuencia, existe un único elemento $f^* \in E_0^*$ tal que $\langle f^*, e \rangle = \langle e^*, Se \rangle$. Por lo tanto, $D(S^*) \ E_0^*$ (por definición de operador adjunto).
+    Para todo $e^* \in E_0^*$, $\langle e^*, Se \rangle$ es un funcional lineal continuo. En consecuencia, existe un único elemento $f^* \in E_0^*$ tal que $\langle f^*, e \rangle = \langle e^*, Se \rangle$. Por lo tanto, $D(S^*) = E_0^*$ (por definición de operador adjunto).
 
     Además,
     \begin{align*}
@@ -1157,7 +1158,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
         &= \sup_{\substack{\lVert e^* \rVert_{E_0^*} \leq 1}} \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \lvert \langle S^* e^*, e \rangle \rvert\\
         &= \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \sup_{\substack{\lVert e^* \rVert_{E_0^*} \leq 1}} \lvert \langle e^*, Se \rangle \rvert\\
         \textcolor{green}{(Corolario 1.4 Brezis)} &= \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \lVert Se \rVert_{E_0}\\
-        &= \rVert S \lVert_{L(E_0)}.
+        &= \lVert S \rVert_{L(E_0)}.
     \end{align*}
 \end{proof}
 
@@ -1168,7 +1169,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 
     Sea $A$ un operador lineal densamente definido en $E_0$. Si $\lambda \in \rho(A)$, entonces $\lambda \in \rho(A^*)$ y
 
-    \[(\lambda - A^*)^{-1} - \big((\lambda - A)^{-1} \big)^*.\]
+    \[(\lambda - A^*)^{-1} = \big((\lambda - A)^{-1} \big)^*.\]
 \end{Lema}
 
 \begin{proof}
@@ -1250,7 +1251,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
     Por lo tanto, $T(0)^*e^* - e^* = 0 \ \forall e^* \in E_0^*$ y así $T(0)^* = I_{E_0^*}$.
 
-    \item $T(t+s)^* = T(t)T(s) \ \forall t ,s \geq 0$. En efecto, 
+    \item $T(t+s)^* = T(s)^*T(t)^* \ \forall t ,s \geq 0$. En efecto,
     \begin{align*}
         &\langle e^*, T(t+s)e \rangle = \langle T(t+s)^*e^*, e \rangle\\
         =&\langle e^*, T(t)T(s)e \rangle\\
@@ -1359,7 +1360,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \end{Corolario}
 
 \begin{proof}
-    Se deduce inmediatamente del Teorema \ref{ch:semigrupos:section:dual:th:SunDual} y del Lema \ref{ch:semigrupos:section:dual:cor:dualReflex}.
+    Se deduce inmediatamente del Teorema \ref{ch:semigrupos:section:dual:th:SunDual} y del Lema \ref{ch:semigrupos:section:dual:lemma:densidadDelDomAdjuntoDelGenerador}.
 \end{proof}
 
 \textcolor{red}{TEXTO...}\\
@@ -1399,7 +1400,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \begin{Corolario}[Espectro de un operador con resolvente compacto]
     \label{ch:semigrupos:section:estExp:cor:espectroResComp}
 
-    Si un operador $A$ tiene resolvente $\rho(A)$ compacto, entonces $\sigma(A)$ está formado exclusivamente por autovalores de $A$.
+    Si un operador $A$ tiene resolvente compacto (esto es, si $(\lambda - A)^{-1}$ es un operador compacto para algún $\lambda \in \rho(A)$), entonces $\sigma(A)$ está formado exclusivamente por autovalores de $A$.
 \end{Corolario}
 
 \begin{proof}
@@ -1414,7 +1415,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
     \begin{enumerate}
         \item El conjunto resolvente de $A$, $\rho(A)$, contiene al eje imaginario $i\mathbb{R}$.
 
-        \item $\displaystyle\lim_{\lvert \lambda \lvert \rightarrow \infty}\lVert (i\lambda I - A)^{-1}\rVert_{L(H)} < \infty$
+        \item $\displaystyle\sup_{\lambda \in \mathbb{R}}\lVert (i\lambda I - A)^{-1}\rVert_{L(H)} < \infty$
     \end{enumerate}
 \end{Teorema}
 

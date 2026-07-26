@@ -239,14 +239,14 @@ Empezamos probando que $A$ es disipativo.
         &(U, AU)_{\mathcal{H}}\\
         =&\begin{aligned}[t]
             -&k\int_0^L(\varphi_x + \psi) (\varphi_{tx} + \psi_t) \, dx -b\int_0^L\psi_x \psi_{tx} \, dx + b\int_0^L \psi_{tx} \psi_x \, dx\\
-            +& k \int_0^L (\varphi_{tx} + \psi_t)(\varphi_x + \psi) \, dx -\alpha\lVert\varphi_t\lVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2}.
+            +& k \int_0^L (\varphi_{tx} + \psi_t)(\varphi_x + \psi) \, dx -\alpha\lVert\varphi_t\rVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2}.
         \end{aligned}\\
-        =& -\alpha\lVert\varphi_t\lVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2}.
+        =& -\alpha\lVert\varphi_t\rVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2}.
     \end{align*}
 
     Por lo tanto, considerando que $\alpha,\beta \geq 0$ y que la norma siempre es no negativa, se tiene que:
 
-    \[\operatorname{Re}(U,AU)_{\mathcal{H}} = -\alpha\lVert\varphi_t\lVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2} \leq 0,\]
+    \[\operatorname{Re}(U,AU)_{\mathcal{H}} = -\alpha\lVert\varphi_t\rVert^2_{L^2} - \beta\lVert\psi_t\rVert^2_{L^2} \leq 0,\]
 
     lo cual prueba que $A$ es disipativo en $\mathcal{H}$.
 \end{proof}
@@ -272,7 +272,7 @@ Empezamos probando que $A$ es disipativo.
         \begin{cases}
             \varphi - \varphi_t &= f_1\\
             -\frac{k}{\rho_1}\varphi_{xx} + \varphi_t - \frac{k}{\rho_1}\psi_x + \frac{\alpha}{\rho_1}\varphi_t &= f_2\\
-            \psi - \psi_t &= f_2\\
+            \psi - \psi_t &= f_3\\
             \frac{k}{\rho_2}\varphi_x - \frac{b}{\rho_2}\psi_{xx} + \frac{k}{\rho_2}\psi + \psi_t + \frac{\beta}{\rho_2}\psi_t &= f_4.
         \end{cases}
     \end{equation}
@@ -289,7 +289,7 @@ Empezamos probando que $A$ es disipativo.
     \begin{equation*}
         \begin{cases}
             -\frac{k}{\rho_1}\varphi_{xx} + \varphi - f_1 - \frac{k}{\rho_1}\psi_x + \frac{\alpha}{\rho_1}(\varphi - f_1) &= f_2\\
-            \frac{k}{\rho_2}\varphi_x - \frac{b}{\rho_2}\psi_{xx} + \frac{k}{\rho_2}\psi + \psi - f_3 + \frac{\beta}{\rho_2}(\psi - f_2) &= f_4.
+            \frac{k}{\rho_2}\varphi_x - \frac{b}{\rho_2}\psi_{xx} + \frac{k}{\rho_2}\psi + \psi - f_3 + \frac{\beta}{\rho_2}(\psi - f_3) &= f_4.
         \end{cases}
     \end{equation*}
 
@@ -320,7 +320,7 @@ Empezamos probando que $A$ es disipativo.
         \end{cases}
     \end{equation*}
     
-    Luego, podemos observar que en el sistema anterior no hay manifestaciones de las derivadas temporales de $\varphi$ ni de $\psi$. En consecuencia, estamos ante un sistema elíptico acoplado. Adicionalmente, este sistema tiene la misma forma que el que se ha descrito en la prueba de la Proposición \ref{ch:teoriaVigas:prop:ResolventeEsSobreyect}, pues $g_1, g_2 \in L^2(0,L)$; en concreto, tiene la misma forma que el sistema \eqref{opSobreyectEq2D}. Por lo tanto, podemos repetir de manera idéntica el argumento dado en la demostración de la Proposición \ref{ch:teoriaVigas:prop:ResolventeEsSobreyect}, consiguiendo así demostrar el resultado deseado.
+    Luego, podemos observar que en el sistema anterior no hay manifestaciones de las derivadas temporales de $\varphi$ ni de $\psi$. En consecuencia, estamos ante un sistema elíptico acoplado. Adicionalmente, este sistema tiene la misma forma que el que se ha descrito en la prueba de la Proposición \ref{ch:teoriaVigas:prop:ResolventeEsSobreyect}, pues $g_1, g_2 \in L^2(0,L)$; en concreto, tiene la misma forma que el sistema \eqref{opSobreyectEq2}. Por lo tanto, podemos repetir de manera idéntica el argumento dado en la demostración de la Proposición \ref{ch:teoriaVigas:prop:ResolventeEsSobreyect}, consiguiendo así demostrar el resultado deseado.
 \end{proof}
 
 \textcolor{red}{TEXTO}
@@ -606,7 +606,7 @@ Empezamos probando que $A$ es disipativo.
 
     \begin{align}
         \label{C1yC2}
-        C_1 = \rho_1 + \frac{\alpha^2L^4}{b} + \frac{\alpha^2L^2}{2k} > 0 \ \ \text{y} \ \ C_2 = \rho_2 + \frac{\beta L^2}{b} > 0,
+        C_1 = \rho_1 + \frac{\alpha^2L^4}{b} + \frac{\alpha^2L^2}{2k} > 0 \ \ \text{y} \ \ C_2 = \rho_2 + \frac{\beta^2 L^2}{b} > 0,
     \end{align}
 
     para concluir la segunda afirmación. Es decir, que existen constantes $C_1, C_2 > 0$ tales que
@@ -760,20 +760,20 @@ Empezamos probando que $A$ es disipativo.
 
     donde 
 
-    \[\lVert U \rVert_{D(A)} = \lVert \varphi \lVert_{H^2} + \lVert \varphi_t \lVert_{H_0^1} + \lVert \psi \rVert_{H^2} + \lVert \psi_t \rVert_{H_0^1}\]
+    \[\lVert U \rVert_{D(A)} = \lVert \varphi \rVert_{H^2} + \lVert \varphi_t \rVert_{H_0^1} + \lVert \psi \rVert_{H^2} + \lVert \psi_t \rVert_{H_0^1}\]
 
     y, aplicando sucesivamente la desigualdad de Poincaré:
 
-    \[\lVert U \rVert_{D(A)} = \lVert \varphi_{xx} \lVert_{L^2} + \lVert \varphi_t \lVert_{H_0^1} + \lVert \psi_{xx} \rVert_{L^2} + \lVert \psi_t \rVert_{H_0^1}.\]
+    \[\lVert U \rVert_{D(A)} = \lVert \varphi_{xx} \rVert_{L^2} + \lVert \varphi_t \rVert_{H_0^1} + \lVert \psi_{xx} \rVert_{L^2} + \lVert \psi_t \rVert_{H_0^1}.\]
     
-    Acotamos ahora término a término tomando como norma de $\mathcal{H}$ la inducida por el funcional de energía (véase \ref{normaEnergiaH}). Empezamos por acotar $\lVert \varphi_t \lVert_{H_0^1}$ y $\lVert \psi_t \lVert_{H_0^1}$ trivialmente por el hecho de que $AU \in \mathcal{H}$.
+    Acotamos ahora término a término tomando como norma de $\mathcal{H}$ la inducida por el funcional de energía (véase \ref{normaEnergiaH}). Empezamos por acotar $\lVert \varphi_t \rVert_{H_0^1}$ y $\lVert \psi_t \rVert_{H_0^1}$ trivialmente por el hecho de que $AU \in \mathcal{H}$.
     
     \begin{align*}
-        \lVert \varphi_t \lVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
+        \lVert \varphi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
         \lVert \psi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}.\\
     \end{align*}
 
-    Ahora acotamos $\lVert \varphi_{xx} \lVert_{L^2}$ y $\lVert \psi_{xx} \rVert_{L^2}$, empezando por $\lVert \varphi_{xx} \lVert_{L^2}$. En primer lugar, se sigue por definición de la norma de $\mathcal{H}$ que:
+    Ahora acotamos $\lVert \varphi_{xx} \rVert_{L^2}$ y $\lVert \psi_{xx} \rVert_{L^2}$, empezando por $\lVert \varphi_{xx} \rVert_{L^2}$. En primer lugar, se sigue por definición de la norma de $\mathcal{H}$ que:
 
     \begin{align*}
         \left \lVert k(\varphi_x + \psi)_x - \alpha\varphi_t \right \rVert_{L^2} &\leq \rho_1\lVert AU \rVert_{\mathcal{H}}\\
@@ -799,7 +799,7 @@ Empezamos probando que $A$ es disipativo.
     Recopilando todos nuestros hallazgos, tenemos que:
 
     \begin{align*}
-        \lVert \varphi_t \lVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
+        \lVert \varphi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
         \lVert \psi_t \rVert_{H_0^1} &\leq \lVert AU \rVert_{\mathcal{H}} \leq \lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\\
         \lVert \varphi_{xx} \rVert_{L^2} &\leq \frac{C_1^\prime}{k}\big(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\big)\\
         \lVert \psi_{xx} \rVert_{L^2} &\leq \frac{C_2^\prime}{b}\big(\lVert AU \rVert_{\mathcal{H}} + \lVert U \rVert_{\mathcal{H}}\big).
@@ -811,7 +811,7 @@ Empezamos probando que $A$ es disipativo.
 
     lo cual prueba que $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big) {\hookrightarrow} \big(D(A), \lVert \, \cdot \, \rVert_{D(A)}\big)$. 
     
-    Lo anterior nos permite entonces utilizar la Proposición \eqref{ch:semigrupos:section:estExp:prop:compRes} (sabemos que $\rho(A) \neq \varnothing$ por la Proposición \ref{ch:TimoshenkoFric:prop:ResolventeEsSobreyect}, la cual nos asegura que $1 \in \rho(A)$) y, así, $\rho(A)$ es compacto. Esto a su vez nos permite invocar el Corolario \ref{ch:semigrupos:section:estExp:cor:espectroResComp}, que nos asegura que el espectro de $A$, $\sigma(A)$, está formado exclusivamente por autovalores de $A$.
+    Lo anterior nos permite entonces utilizar la Proposición \eqref{ch:semigrupos:section:estExp:prop:compRes} (sabemos que $\rho(A) \neq \varnothing$ por la Proposición \ref{ch:TimoshenkoFric:prop:ResolventeEsSobreyect}, la cual nos asegura que $1 \in \rho(A)$) y, así, $A$ tiene resolvente compacto. Esto a su vez nos permite invocar el Corolario \ref{ch:semigrupos:section:estExp:cor:espectroResComp}, que nos asegura que el espectro de $A$, $\sigma(A)$, está formado exclusivamente por autovalores de $A$.
 
     Proseguimos por contradicción. Supongamos que $i\mathbb{R} \not \subseteq \rho(A)$. En ese caso existe $\lambda \in \mathbb{R}$ tal que $i\lambda \notin \rho(A)$, lo cual implica (por definición del conjunto resolvente) que $i\lambda \in \sigma(A)$; esto es, existe $U = (\varphi, \varphi_t, \psi, \psi_t) \in D(A)$ no nulo tal que
 
@@ -891,7 +891,7 @@ Empezamos probando que $A$ es disipativo.
 \label{ch:TimoshenkoFric:lemma:acotacionResolvente}
     Supongamos que $\rho_1, \rho_2, b, k > 0$ y que $\alpha,\beta > 0$. Sea $A$ el operador definido en \eqref{operadorATimoDosAmortig}, entonces
 
-    \[\lim_{\lvert \lambda \lvert \rightarrow \infty} \sup \lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})} < \infty\]
+    \[\sup_{\lambda \in \mathbb{R}} \lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})} < \infty.\]
 \end{Lema}
 
 \begin{proof}
@@ -899,7 +899,7 @@ Empezamos probando que $A$ es disipativo.
 
     \[(i\lambda I - A)U = F,\]
 
-    para cualquier elección de $\lambda \in \mathbb{R}$. Sea entonces $U \in D(A)$ tal que $(i\lambda I - A)U = F$ para cualquier $\lambda \in \mathbb{R}$, se tiene en consecuencia que $U = (i\lambda I - A)^{-1}F$. Así, para mostrar que el límite superior de $\lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})} < \infty$ cuando $\lambda \rightarrow \infty$ basta con mostrar (por la definición de la norma de operador) que existe $C > 0$ tal que para todo $F \in \mathcal{H}$
+    para cualquier elección de $\lambda \in \mathbb{R}$. Sea entonces $U \in D(A)$ tal que $(i\lambda I - A)U = F$ para cualquier $\lambda \in \mathbb{R}$, se tiene en consecuencia que $U = (i\lambda I - A)^{-1}F$. Así, para acotar $\lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})}$ basta con mostrar (por la definición de la norma de operador) que existe $C > 0$ tal que para todo $F \in \mathcal{H}$
 
     \[\lVert U \rVert_{\mathcal{H}} \leq C \lVert F \rVert_{\mathcal{H}},\]
 
@@ -980,7 +980,7 @@ Empezamos probando que $A$ es disipativo.
         \end{aligned}\\
         \implies&
         \begin{aligned}[t]
-            \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+            \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
             +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \psi \rVert_{L^2}^2.
         \end{aligned}
     \end{align*}
@@ -988,11 +988,11 @@ Empezamos probando que $A$ es disipativo.
     Ahora utilizamos la Desigualdad de Poincaré \ref{ch:preliminares:th:poincare} y obtenemos:
 
     \begin{align*}
-        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq &\left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
         +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \psi \rVert_{L^2}^2\\
-        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        \frac{b}{\rho_2} \lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
         +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon L \lVert \psi_x \rVert_{L^2}^2\\
-        \left(\frac{b}{\rho_2} - \varepsilon L\right)\lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+        \left(\frac{b}{\rho_2} - \varepsilon L\right)\lVert \psi_x \rVert_{L^2}^2 \leq& \left(C_{\varepsilon} + 1\right)\lVert \psi_t \rVert_{L^2}^2 + \frac{k}{\rho_2 \lvert \lambda \lvert} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
         +& \left(2 + \frac{k}{\rho_2 \lvert \lambda \rvert} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}},\\
     \end{align*}
 
@@ -1005,12 +1005,12 @@ Empezamos probando que $A$ es disipativo.
     \begin{align*}
         \lVert \psi_x \rVert_{L^2}^2 &\leq 
         \begin{aligned}[t]
-            K \Bigg[ &C\left(C_{\varepsilon} + 1\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
+            K \Bigg[ &C\left(C_{\varepsilon} + 1\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}\\
             + &\left(2 + \frac{k}{\rho_2} \right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} \Bigg]
         \end{aligned}\\
         &=
         \begin{aligned}[t]
-            K \Bigg[ &\left(C\left(C_{\varepsilon} + 1\right) + 2 + \frac{k}{\rho_2}\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\lVert_{L^2} \lVert \psi_t \rVert_{L^2}.
+            K \Bigg[ &\left(C\left(C_{\varepsilon} + 1\right) + 2 + \frac{k}{\rho_2}\right)\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \frac{k}{\rho_2} \lVert \varphi_x + \psi\rVert_{L^2} \lVert \psi_t \rVert_{L^2}.
         \end{aligned}\\
     \end{align*}
 
@@ -1020,7 +1020,7 @@ Empezamos probando que $A$ es disipativo.
 
     tenemos
 
-    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}.\]
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}.\]
 
     Multiplicamos ahora la segunda ecuación de $(i\lambda I - A)U = F$ en coordenadas por $\overline{\varphi}$ e integramos en $(0,L)$. Usamos además la primera ecuación, que dicta que $i\lambda \varphi - \varphi_t = f_1$. Eso nos permite obtener:
 
@@ -1085,21 +1085,21 @@ Empezamos probando que $A$ es disipativo.
 
     Invocando ahora la desigualdad 
 
-    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\]
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}\]
 
     obtenida previamente, tenemos, usando la desigualdad de Poincaré:
 
     \begin{align*}
         \frac{k}{\rho_1}\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon\lVert \psi \rVert_{L^2}^2\\
         &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + C_\varepsilon L\lVert \psi_x \rVert_{L^2}^2\\
-        &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + L C_\varepsilon C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
-        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}.
+        &\leq K'C^{\prime \prime} \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + \varepsilon \lVert \varphi_x + \psi\rVert_{L^2}^2 + L C_\varepsilon C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + L C_\varepsilon C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}.
     \end{align*}
 
     Aplicamos nuevamente la desigualdad de Young sobre el último sumando:
 
     \begin{align*}
-        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
+        \left(\frac{k}{\rho_1} - \varepsilon \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + L C_\varepsilon C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2}\\
         &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}  + \delta \lVert \varphi_x + \psi \rVert_{L^2}^2 + C_\delta \lVert \psi_t \rVert_{L^2}^2\\
         \left(\frac{k}{\rho_1} - \varepsilon - \delta \right)\lVert \varphi_x + \psi \rVert_{L^2}^2 &\leq (K'C^{\prime \prime} + L C_\varepsilon C') \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C_\delta \lVert \psi_t \rVert_{L^2}^2.
     \end{align*}
@@ -1118,7 +1118,7 @@ Empezamos probando que $A$ es disipativo.
 
     Sustituyendo lo anterior en
 
-    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\lVert_{L^2}\lVert \psi_t \rVert_{L^2},\]
+    \[\lVert \psi_x \rVert_{L^2}^2 \leq C'\lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}} + C'\lVert \varphi_x + \psi\rVert_{L^2}\lVert \psi_t \rVert_{L^2},\]
 
     obtenemos:
 
@@ -1137,14 +1137,20 @@ Empezamos probando que $A$ es disipativo.
     \begin{align*}
         \lVert U \rVert_{\mathcal{H}}^2 &= k\lVert\varphi_x + \psi \rVert_{L^2}^2 + \rho_1 \lVert \varphi_t \rVert_{L^2}^2 + \rho_2 \lVert \psi_t \rVert_{L^2}^2 + b \lVert \psi_x \rVert_{L^2}^2\\
         &\leq C \lVert U \rVert_{\mathcal{H}} \lVert F \rVert_{\mathcal{H}}\\
-        \text{(des. Young)} &\leq C \lVert F \rVert_{L^2}^2 + \frac{1}{2}\lVert U \rVert_{L^2}^2,
+        \text{(des. Young)} &\leq C \lVert F \rVert_{\mathcal{H}}^2 + \frac{1}{2}\lVert U \rVert_{\mathcal{H}}^2,
     \end{align*}
 
     y así
 
-    \[\left(1-\frac{1}{2} \right)\lVert U \lVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq 2C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2,\]
+    \[\left(1-\frac{1}{2} \right)\lVert U \rVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq 2C \lVert F \rVert_{\mathcal{H}}^2 \implies \lVert U \rVert_{\mathcal{H}}^2 \leq C \lVert F \rVert_{\mathcal{H}}^2,\]
 
-    lo cual concluye la demostración del Lema.
+    La cota anterior se ha obtenido para $\lvert \lambda \rvert > 1$. Para
+    $\lvert \lambda \rvert \leq 1$ basta observar que $i\mathbb{R} \subset \rho(A)$ por
+    el Lema \ref{ch:TimoshenkoFric:lemma:resolventeA} y que la aplicación
+    $\lambda \mapsto \lVert (i\lambda I - A)^{-1}\rVert_{L(\mathcal{H})}$ es continua en
+    $\rho(A)$, luego está acotada sobre el compacto $[-1,1]$. Tomando el máximo de ambas
+    cotas se obtiene el supremo sobre todo $\mathbb{R}$, lo cual concluye la demostración
+    del Lema.
 \end{proof}
 
 \textcolor{red}{TEXTO...}

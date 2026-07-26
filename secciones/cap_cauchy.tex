@@ -29,7 +29,7 @@ entonces el problema anterior se puede reescribir como el sistema:
         u_{tt}(x,t) = c^2 \nabla^2 u(x,t), \ &(x,t) \in \Omega \times \mathbb{R}^+,\\
         v(x,t) = u_t(x,t), \ &(x,t) \in \Omega \times \mathbb{R}^+,\\
         u(x,0) = u_0(x), \ &x \in \Omega,\\
-        v(x,0)  = v_0(x) \ &x \in \Omega,\\
+        v(x,0)  = u_1(x) \ &x \in \Omega,\\
         u(x,t) = 0 \ &(x,t) \in \partial \Omega \times \mathbb{R}^+,
     \end{cases}
 \end{align}
@@ -123,14 +123,14 @@ Por lo tanto, $e(t)$ es una solución débil. Veamos ahora que esta solución es
 
 es también una solución al problema homogéneo con dato inicial
 
-\[u(t_0) = e_1(t_0) - e(t_1) = e_0 - e_0 = 0,\]
+\[u(t_0) = e_1(t_0) - e_2(t_0) = e_0 - e_0 = 0,\]
 
 pues
 
 \begin{align*}
     \frac{\dd^+}{\dd t}\langle e^*, u(t) \rangle &= \frac{\dd^+}{\dd t}\langle e^*, e_1(t)\rangle - \frac{\dd^+}{\dd t}\langle e^*, e_2(t)\rangle\\
-    &= \langle e^* Ae_1(t)\rangle - \langle e^* Ae_2(t)\rangle\\
-    &= \langle e^*, u(t) \rangle.
+    &= \langle A^*e^*, e_1(t)\rangle - \langle A^*e^*, e_2(t)\rangle\\
+    &= \langle A^*e^*, u(t) \rangle.
 \end{align*}
 
 Construyamos ahora una función con más regularidad. Para ello, definimos
@@ -519,7 +519,7 @@ A continuación, damos condiciones simples que aseguran la diferenciabilidad de 
 
     que, de nuevo, implica que $\displaystyle \frac{\dd^+}{\dd t}u(t)$ existe y que $\displaystyle t \mapsto \frac{\dd^+}{\dd t}u(t)$ es continua.
 
-    Finalmente, por lo dicho al comienzo (entiéndase: que $t \mapsto \mathrm{e}^{A(t-t_0)}e_0$ es de clase $C^1$ por ser $e_0$ un elemento de $D(A)$), se tiene que $\displaystyle \frac{\dd^+}{\dd t}e(t)$ existe (pues $\displaystyle \frac{\dd^+}{\dd t}e(t) = \frac{\dd^+}{\dd t}\Big(\mathrm{e}^{A(t_0 - t)}e_0 \Big) + \frac{\dd^+}{\dd t}u(t)$) y $\displaystyle t \mapsto \frac{\dd^+}{\dd t}e(t)$ es continua. Así, por el cuarto punto del Teorema \eqref{ch:cauchy:section:noHom:th:solDebilYFuerteRels}
+    Finalmente, por lo dicho al comienzo (entiéndase: que $t \mapsto \mathrm{e}^{A(t-t_0)}e_0$ es de clase $C^1$ por ser $e_0$ un elemento de $D(A)$), se tiene que $\displaystyle \frac{\dd^+}{\dd t}e(t)$ existe (pues $\displaystyle \frac{\dd^+}{\dd t}e(t) = \frac{\dd^+}{\dd t}\Big(\mathrm{e}^{A(t - t_0)}e_0 \Big) + \frac{\dd^+}{\dd t}u(t)$) y $\displaystyle t \mapsto \frac{\dd^+}{\dd t}e(t)$ es continua. Así, por el cuarto punto del Teorema \eqref{ch:cauchy:section:noHom:th:solDebilYFuerteRels}
 
     \[\frac{\dd^+}{\dd t}e(t) = Ae(t) + f(t) \ ; \ e(t) \in D(A), \]
 
