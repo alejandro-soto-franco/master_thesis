@@ -12,7 +12,7 @@ Empecemos por fijar la notación que estaremos usando a lo largo de este capítu
 \[ ||T||_{L(E_0, F_0)} = \sup_{\substack{e \in E_0 \\ e \neq 0}} \frac{||Te||_{F_0}}{||e||_{E_0}}.\]
 
 En el caso particular que $E_0 = F_0$, escribiremos $L(E_0)$ para referirnos a $L(E_0, E_0)$. Sea $E_0^*$ el dual topológico de $E_0$ (esto es, $L(E_0, \mathbb{K})$ con la topología usual inducida por la norma definida anteriormente), entonces denotamos al valor de $e^* \in E_0^*$ en $e \in E_0$ como $\langle e^*, e\rangle$ o bien $\langle e, e^*\rangle$\footnotemark (alternativamente, también nos permitiremos usar la notación $\langle \cdot, \cdot \rangle_{E^*_0, E_0}$ cuando se considere pertinente). Finalmente, denotaremos por $R(T)$ a la imagen del operador $T$.
-\footnotetext{\textcolor{red}{PONER AQUÍ QUE POR EL} \textcolor{green}{TEOREMA REPRESENTACIÓN DE RIESZ} \textcolor{red}{TAMBIÉN PODEMOS USAR ESA NOTACIÓN PARA EL PRODUCTO ESCALAR EN UN ESPACUO DE HILBERT}}
+\footnotetext{Por el Teorema de representación de Riesz-Fréchet \ref{ch:preliminares:th:rieszFrechet}, todo espacio de Hilbert $H$ se identifica isométricamente con su dual $H^*$, de modo que emplearemos esta misma notación para el producto escalar de $H$.}
 Demos inicio a esta sección definiendo el objeto matemático central de este capítulo: los \textit{semigrupos de operadores lineales}.\\
 
 \begin{Definicion}{(Semigrupo de operadores lineales)}
@@ -267,7 +267,7 @@ Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
         ||T(t/n)e - e|| \overset{\substack{\text{Desigualdad} \\ \text{Triangular}}}{\leq} ||T(t/n)e|| + ||e|| \overset{\substack{\text{Def. de} \\ \text{norma operador}}}{\leq} \Big(||T(t/n)|| + 1 \Big )||e|| \leq (M\mathrm{e}^{\omega t} + 1)||e||,
     \end{align*}
 
-    y así $|a_n| \leq |\phi(t)| \ ||e|| \ |M\mathrm{e}^{\omega t} + 1|$, donde $t \mapsto |\phi(t)| \ ||e|| \ |M\mathrm{e}^{\omega t} + 1| \in L^1\big([0, \infty)\big)$, pues $t \mapsto |\phi(t)| \ ||e|| \in L^1\big ([0, \infty) \big)$ trivialmente y $t \mapsto |\phi(t)| \ ||e|| \ M\mathrm{e}^{\omega t}$ porque $\phi$ tiene soporte compacto. Entonces, utilizando el Teorema de la convergencia dominada de Lebesgue (\textcolor{green}{Buscar este teorema}), se tiene que: 
+    y así $|a_n| \leq |\phi(t)| \ ||e|| \ |M\mathrm{e}^{\omega t} + 1|$, donde $t \mapsto |\phi(t)| \ ||e|| \ |M\mathrm{e}^{\omega t} + 1| \in L^1\big([0, \infty)\big)$, pues $t \mapsto |\phi(t)| \ ||e|| \in L^1\big ([0, \infty) \big)$ trivialmente y $t \mapsto |\phi(t)| \ ||e|| \ M\mathrm{e}^{\omega t}$ porque $\phi$ tiene soporte compacto. Entonces, utilizando el Teorema de la convergencia dominada de Lebesgue \ref{ch:preliminares:th:dominada}, se tiene que:
 
     \[\lim_{n \rightarrow \infty }|| f_n - e || \leq \lim_{n \rightarrow \infty } \int_0 ^\infty a_n = \lim_{n \rightarrow \infty} \int_0^{\infty} |\phi(t)| || T(t/n)e - e|| = 0,\]
 
@@ -626,7 +626,7 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
         &= \lim_{\lambda \rightarrow \infty^+} \int_0^t \mathrm{e}^{sA_\lambda}A_\lambda e \, \dd s,
     \end{align*}
 
-    luego, como $(s \mapsto \mathrm{e}^{sA_\lambda}A_\lambda e)_{n=1}^\infty$ es una sucesión de funciones Bochner-integrables por ser su norma Lebesgue-integrable (\textcolor{green}{Teorema 2.14} \href{http://tesis.uson.mx/digital/tesis/docs/18969/Capitulo2.pdf}{recurso aquí}), $s \mapsto T(s)Ae$ es fuertemente medible por ser continua,\todo{JUSTIFICAR} $\lVert \mathrm{e}^{sA_{\lambda_n}}A_{\lambda_n}e - T(s)Ae \rVert_{E_0} \rightarrow 0$\footnotemark \text{} y
+    luego, como $(s \mapsto \mathrm{e}^{sA_\lambda}A_\lambda e)_{n=1}^\infty$ es una sucesión de funciones Bochner-integrables por ser su norma Lebesgue-integrable (Teorema \ref{ch:preliminares:th:bochner}), $s \mapsto T(s)Ae$ es fuertemente medible por ser continua,\todo{JUSTIFICAR} $\lVert \mathrm{e}^{sA_{\lambda_n}}A_{\lambda_n}e - T(s)Ae \rVert_{E_0} \rightarrow 0$\footnotemark \text{} y
     \footnotetext{Para poder argumentar que $e \in D(A)$ y $Ae \in D(A)$. Por eso se pide que $e \in D(A^2)$.}
     \begin{align*}
         \lVert \mathrm{e}^{sA_{\lambda_n}}A_{\lambda_n}e\rVert_{E_0} &\leq  \lVert \mathrm{e}^{sA_{\lambda_n}}\rVert_{L(E_0)} \, \lVert A_{\lambda_n}e\rVert_{E_0}\\
@@ -634,7 +634,7 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
         &\leq 2\lambda_n \, \lVert e \rVert_{E_0} \quad \forall n \in \mathbb{N},
     \end{align*}
 
-    entonces, por \textcolor{green}{Teorema 2.15}, $s \mapsto T(s)Ae$ es Bochner-integrable y
+    entonces, por el Teorema \ref{ch:preliminares:th:bochnerDominada}, $s \mapsto T(s)Ae$ es Bochner-integrable y
 
     \[\lim_{n \rightarrow \infty^+}\int_0^t \mathrm{e}^{sA_{\lambda_n}}A_{\lambda_n}e \, \dd s = \int_0^t T(s)Ae \, \dd s.\]
 
@@ -824,7 +824,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
     \[0 = \lVert (\lambda_0 - A)e \rVert_{E_0} \geq \lambda_0 \lVert e \rVert_{E_0} \implies \lambda_0 \lVert e \rVert_{E_0} = 0,\]
 
-    y como $\lambda_0 > 0$, entonces $\lVert e \rVert_{E_0} = 0$, lo que implica que $e = 0$ y así $(\lambda_0 - A)$ es inyectivo. En consecuencia $(\lambda_0 - A)$ es una biyección y, por corolario del \textcolor{green}{Teorema de la función abierta}, su inversa $(\lambda_0 - A)^{-1}$ es un operador continuo. Luego $\lambda_0 \in \rho(A)$.
+    y como $\lambda_0 > 0$, entonces $\lVert e \rVert_{E_0} = 0$, lo que implica que $e = 0$ y así $(\lambda_0 - A)$ es inyectivo. En consecuencia $(\lambda_0 - A)$ es una biyección y, por corolario del Teorema de la aplicación abierta \ref{ch:preliminares:th:aplicacionAbierta}, su inversa $(\lambda_0 - A)^{-1}$ es un operador continuo. Luego $\lambda_0 \in \rho(A)$.
 
     Considerando ahora $(e_n) \subset D(A)$ tal que $e_n \rightarrow e$ y $Ae_n \rightarrow f$. Entonces, por continuidad:
 
@@ -836,7 +836,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
     por lo que $A$ es cerrado (invocando la definición).
 
-    Continuando, sea $\Lambda = \{\lambda \in \rho(A) \cap \mathbb{R} : \lambda > 0\}$. Se tiene que $\Lambda$ es un conjunto abierto en $(0, \infty)$ (\textcolor{green}{Teorema 1. Sección VIII.2 Yosida}). Probaremos que $\Lambda$ es cerrado en $(0, \infty)$ para concluir que $\Lambda = (0, \infty)$.
+    Continuando, sea $\Lambda = \{\lambda \in \rho(A) \cap \mathbb{R} : \lambda > 0\}$. Se tiene que $\Lambda$ es un conjunto abierto en $(0, \infty)$ (véase \cite[Cap.~VIII, \S 2, Teorema~1]{yosida-1980-fun-ana}, aplicable por ser $A$ cerrado). Probaremos que $\Lambda$ es cerrado en $(0, \infty)$ para concluir que $\Lambda = (0, \infty)$.
 
     Entonces, supongamos que $(\lambda_n)_{n = 1}^\infty \subset \Lambda$ tal que $\lambda_n \rightarrow \lambda > 0$. Es decir, $\forall \varepsilon > 0 \, \exists N > 0$ tal que $|\lambda_n - \lambda | < \varepsilon \ \ \forall n \geq N$. Luego, para un $n$ lo suficientemente grande:
 
