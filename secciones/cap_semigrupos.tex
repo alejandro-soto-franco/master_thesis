@@ -1151,7 +1151,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
         \lVert e_n - e\rVert_{E_0} = \left \lVert e_n - \left(I - \frac{1}{n}A\right)e_n \right \rVert_{E_0} = \frac{1}{n}\left \lVert Ae_n \right \rVert_{E_0},
     \end{align*}
 
-    por lo que $e_n \rightarrow e$. Como $\lVert Ae_n \rVert_{E_0} \leq C$ y $E_0$ es reflexivo, entonces \textcolor{green}{(REFERENCIAR ESTO??)} existe una subsucesión $(Ae_{n_k})$ de $Ae_n$ tal que $Ae_{n_k} \xrightarrow{w} f$. Como $A$ es  cerrado (por el Teorema de Lumer-Phillips $2$) se sigue que $f = Ae$ \textcolor{green}{(LEMA DE MAZUR?? INVESTIGAR CERRADO + CONVERGENCIA DEBIL = CONVERGENCIA FUERTE)}. Finalmente, como $\langle e^*, x \rangle = 0$ para todo $x \in D(A)$, tenemos
+    por lo que $e_n \rightarrow e$. Como $\lVert Ae_n \rVert_{E_0} \leq C$, la sucesión $(Ae_n)$ está acotada y $A$ es cerrado (por el Teorema de Lumer-Phillips $2$), de modo que el Teorema \ref{ch:preliminares:th:compacidadDebilCerrado} proporciona una subsucesión $(Ae_{n_k})$ con $Ae_{n_k} \xrightarrow{w} f$ y garantiza además que $e \in D(A)$ y $f = Ae$. Finalmente, como $\langle e^*, x \rangle = 0$ para todo $x \in D(A)$, tenemos
 
     \[0 = \langle e^*, Ae_{n_k}\rangle = n_k \langle e^*, e_{n_k} - e \rangle = n_k \langle e^*, e_{n_k}\rangle - n_k \cancelto{0}{\langle e^*, e\rangle},\]
 
@@ -1179,7 +1179,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
         \lVert S^* \rVert_{L(E^*_0)} &= \sup_{\substack{\lVert e^* \rVert_{E_0^*} \leq 1}} \lVert S^* e^* \rVert_{E_0^*}\\
         &= \sup_{\substack{\lVert e^* \rVert_{E_0^*} \leq 1}} \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \lvert \langle S^* e^*, e \rangle \rvert\\
         &= \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \sup_{\substack{\lVert e^* \rVert_{E_0^*} \leq 1}} \lvert \langle e^*, Se \rangle \rvert\\
-        \textcolor{green}{(Corolario 1.4 Brezis)} &= \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \lVert Se \rVert_{E_0}\\
+        \text{(\cite[Corolario~1.4]{brezis-2011-fun-ana-sob})} &= \sup_{\substack{\lVert e \rVert_{E_0} \leq 1}} \lVert Se \rVert_{E_0}\\
         &= \lVert S \rVert_{L(E_0)}.
     \end{align*}
 \end{proof}
@@ -1288,7 +1288,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \begin{Observacion}
     \label{ObsC0Dual}
 
-    A pesar de que $T(t)^*$ es un semigrupo, no necesariamente es un $C_0$-semigrupo (\textcolor{green}{Véase 5.14 Engel \& Nagel One-Parameter Semigroups for Linear Evolution Equations}). 
+    A pesar de que $T(t)^*$ es un semigrupo, no necesariamente es un $C_0$-semigrupo (véase \cite[5.14]{engel-1999-one-sem-lin}).
 
     Como consecuencia, es importante notar también que $A^*$ no necesariamente está densamente definido en $E_0^*$.
 \end{Observacion}
@@ -1314,7 +1314,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 
     \[A^\sigma e^* = A^*e^*.\]
 
-    Véase \textcolor{green}{[2.5] de Engel \& Nagel One-Parameter Semigroups for Linear Evolution Equations} para un estudio más riguroso.
+    Véase \cite[2.5]{engel-1999-one-sem-lin} para un estudio más riguroso.
 \end{Definicion}
 
 \textcolor{red}{TEXTO}\\
@@ -1358,7 +1358,7 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \begin{proof}
     Por contradicción: Si $D(S^*)$ no es denso en $E_0^*$, entonces existe un elemento $e_0 \in E_0$ tal que $e_0 \neq 0$ y $\langle e^*, e_0 \rangle = 0$ para todo $e^* \in D(S^*)$ (Véase el Corolario de Hahn-Banach \ref{ch:preliminares:cor:hahnBanach}).
 
-    Luego, por un lado tenemos que el gráfico de $S$ es cerrado y por otro que $(0,e_0)$ no pertenece a dicho gráfico. Por el Teorema de Hahn-Banach \textcolor{green}{[CITAR]}, se tiene que existe un funcional $(e_1^*, e_2^*) \in \big(G(S)\big)^*$ con $e_1^*, e_2^* \in E_0^*$ tal que
+    Luego, por un lado tenemos que el gráfico de $S$ es cerrado y por otro que $(0,e_0)$ no pertenece a dicho gráfico. Por la segunda forma geométrica del Teorema de Hahn-Banach (\cite[Teorema~1.7]{brezis-2011-fun-ana-sob}), se tiene que existe un funcional $(e_1^*, e_2^*) \in \big(G(S)\big)^*$ con $e_1^*, e_2^* \in E_0^*$ tal que
 
     \[\langle (e_1^* - e_2^*), (e, Se) \rangle = \langle e_1^*, e\rangle - \langle e_2^*, Se \rangle = 0\]
 

@@ -907,6 +907,48 @@ $\langle e_n^*, e \rangle \rightarrow \langle e^*, e \rangle$ para todo $e \in E
 Véase \cite[Teorema~3.16]{brezis-2011-fun-ana-sob}.
 \end{proof}
 
+En un espacio reflexivo la compacidad anterior se traduce en un enunciado
+sucesional para la topología débil, que combinado con el carácter cerrado de un
+operador permite identificar el límite débil de las imágenes. Es el argumento que
+se emplea al probar que un operador disipativo con imagen densa está densamente
+definido (Teorema \ref{ch:semigrupos:th:DisipYReflex}).\\
+
+\begin{Teorema}{(Compacidad débil sucesional y operadores cerrados)}
+\label{ch:preliminares:th:compacidadDebilCerrado}
+
+Sea $E$ un espacio de Banach reflexivo.
+
+\begin{enumerate}
+    \item Toda sucesión acotada $(e_n) \subset E$ admite una subsucesión
+    convergente en la topología débil $\sigma(E, E^*)$
+    (\cite[Teorema~3.18]{brezis-2011-fun-ana-sob}).
+
+    \item Sea $A : D(A) \subseteq E \rightarrow E$ un operador lineal cerrado y sea
+    $(e_n) \subset D(A)$ tal que $e_n \rightarrow e$ en $E$ y $(Ae_n)$ está acotada.
+    Entonces $e \in D(A)$ y existe una subsucesión con
+    $Ae_{n_k} \rightharpoonup Ae$ débilmente en $E$.
+\end{enumerate}
+\end{Teorema}
+
+\begin{proof}
+El primer apartado es el resultado citado. Para el segundo, por el apartado
+anterior existe una subsucesión $(Ae_{n_k})$ y un $f \in E$ tales que
+$Ae_{n_k} \rightharpoonup f$ débilmente.
+
+El gráfico $G(A)$ es un subespacio vectorial de $E \times E$, luego es convexo, y
+es cerrado en la topología fuerte por serlo $A$
+(Definición \ref{ch:preliminares:def:cerrado}). Un conjunto convexo es cerrado en
+la topología débil si y sólo si lo es en la fuerte
+(\cite[Teorema~3.7]{brezis-2011-fun-ana-sob}), de modo que $G(A)$ es débilmente
+cerrado.
+
+Ahora bien, $e_{n_k} \rightarrow e$ fuertemente y, por tanto, también débilmente;
+junto con $Ae_{n_k} \rightharpoonup f$ esto da
+$(e_{n_k}, Ae_{n_k}) \rightharpoonup (e, f)$ en $E \times E$. Como
+$(e_{n_k}, Ae_{n_k}) \in G(A)$ y $G(A)$ es débilmente cerrado, se sigue que
+$(e,f) \in G(A)$; esto es, $e \in D(A)$ y $Ae = f$.
+\end{proof}
+
 En el marco hilbertiano, el teorema de Lax-Milgram resuelve formas bilineales
 coercivas y es la herramienta habitual para las formulaciones variacionales.\\
 
