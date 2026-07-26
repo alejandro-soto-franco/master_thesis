@@ -846,7 +846,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
     \[\lVert (\lambda_n - \lambda)(\lambda_n - A)^{-1}\rVert_{L(E_0)} = |\lambda_n - \lambda| \ \lVert (\lambda_n - A)^{-1}\rVert_{L(E_0)} \overset{\substack{\frac{3\lambda}{4} \leq \lambda_n \leq \frac{5\lambda}{4}}}{\leq} \frac{\frac{\lambda}{4}}{\frac{3 \lambda}{4}} = \frac{1}{3} < 1.\]
 
-    Luego, por \textcolor{green}{Teorema 7.3-1 Kreyszig}, $\big(I + (\lambda_n - \lambda)(\lambda_n - A)^{-1}\big)^{-1}$ es un operador lineal acotado en $E_0$. En consecuencia, $I + (\lambda_n - \lambda)(\lambda_n - A)^{-1}$ es un isomorfismo de $E_0$ en $E_0$. Por lo tanto,
+    Luego, por \cite[Teorema~7.3-1]{kreyszig-1978-int-fun-ana}, $\big(I + (\lambda_n - \lambda)(\lambda_n - A)^{-1}\big)^{-1}$ es un operador lineal acotado en $E_0$. En consecuencia, $I + (\lambda_n - \lambda)(\lambda_n - A)^{-1}$ es un isomorfismo de $E_0$ en $E_0$. Por lo tanto,
 
     \[\lambda - A = \big(I + (\lambda_n - \lambda)(\lambda_n - A)^{-1} \big)(\lambda_n - A)\]
 
@@ -1066,7 +1066,31 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
 \end{Teorema}
 \footnotetext{Decimos que un operador lineal $A : D(A) \subset E_0 \rightarrow E_0$ es \textit{cerrable} si existe otro operador lineal $\overline{A}$ tal que $G(A) \subset G(\overline{A}), \overline{A}|_{D(A)} = A, \overline{G(A)} = G(\overline{A})$, donde $G(T)$ es el grafo (también llamado el gráfico o la gráfica) de $T$.}
 \begin{proof}
-    La primera afirmación se prueba trivialmente aplicando el Teorema de Lumer-Philips \ref{ch:semigrupos:th:LumerPhillips}. En concreto, se aplica $2$ y luego $1$, lo cual concluye la demostración de la primera afirmación.
+    Comenzamos con la primera afirmación. El Teorema de Lumer-Phillips \ref{ch:semigrupos:th:LumerPhillips} exige que $A$ esté densamente definido, hipótesis que aquí no se supone y que, de hecho, se deduce de esta misma afirmación en el Teorema \ref{ch:semigrupos:th:DisipYReflex}; damos por tanto un argumento directo. Sea
+
+    \[\Lambda := \{\lambda > 0 : R(\lambda - A) = E_0\},\]
+
+    que es no vacío por hipótesis, pues $\lambda_0 \in \Lambda$. Probaremos que si $\lambda \in \Lambda$, entonces $(0, 2\lambda) \subseteq \Lambda$.
+
+    En efecto, sea $\lambda \in \Lambda$. Por ser $A$ disipativo, el Lema \ref{ch:semigrupos:lemma:CondOpDisipativo} da
+
+    \[\lVert (\lambda - A)e \rVert_{E_0} \geq \lambda \lVert e \rVert_{E_0}, \quad \forall e \in D(A),\]
+
+    de donde $\lambda - A$ es inyectivo. Como además es sobreyectivo por ser $\lambda \in \Lambda$, se trata de una biyección de $D(A)$ sobre $E_0$ cuya inversa verifica
+
+    \[\lVert (\lambda - A)^{-1} \rVert_{L(E_0)} \leq \frac{1}{\lambda}.\]
+
+    Sea ahora $\mu \in (0, 2\lambda)$; esto es, $\lvert \mu - \lambda \rvert < \lambda$. Entonces
+
+    \[\lVert (\mu - \lambda)(\lambda - A)^{-1} \rVert_{L(E_0)} \leq \frac{\lvert \mu - \lambda \rvert}{\lambda} < 1,\]
+
+    por lo que $I + (\mu - \lambda)(\lambda - A)^{-1}$ es un isomorfismo de $E_0$ sobre $E_0$, con inverso acotado dado por la serie de Neumann (véase \cite[Teorema~7.3-1]{kreyszig-1978-int-fun-ana}). Ahora bien, para todo $e \in D(A)$,
+
+    \[\big(I + (\mu - \lambda)(\lambda - A)^{-1}\big)(\lambda - A)e = (\lambda - A)e + (\mu - \lambda)e = (\mu - A)e,\]
+
+    de modo que $\mu - A$ es la composición de la biyección $\lambda - A : D(A) \rightarrow E_0$ con un isomorfismo de $E_0$ sobre $E_0$. En particular $R(\mu - A) = E_0$ y $\mu \in \Lambda$.
+
+    Para concluir, definimos $\lambda_n := \left(\tfrac{3}{2}\right)^n \lambda_0$. Se tiene $\lambda_0 \in \Lambda$ y, si $\lambda_n \in \Lambda$, entonces $\lambda_{n+1} = \tfrac{3}{2}\lambda_n \in (0, 2\lambda_n) \subseteq \Lambda$; por inducción, $\lambda_n \in \Lambda$ para todo $n \geq 0$. Dado $\lambda > 0$ arbitrario, como $\lambda_n \rightarrow \infty$ existe $n$ tal que $\lambda < 2\lambda_n$, y por tanto $\lambda \in (0, 2\lambda_n) \subseteq \Lambda$. Así $\Lambda = (0, \infty)$, que es la primera afirmación.
 
     Para probar la segunda afirmación procedemos de la siguiente manera: Por ser $A$ cerrable sabemos que existe un operador cerrado $\overline{A}$. Sea $e \in D(\overline{A}), f = \overline{A}e$. Entonces, existe una sucesión $(e_n) \subset D(A)$ tal que $e_n \rightarrow e$ y $Ae_n \rightarrow f = \overline{A}e$ (esta sucesión existe porque, de acuerdo a la \textcolor{green}{PROPOSICIÓN EN VIII DE METHODS OF MODERN MATHEMATICAL PHYSICS} $G(\overline{A}) = \overline{G(A)} = \{(x, y) \in E_0 : \exists \big((x_n, Ax_n)\big) \subset G(A) \text{ tal que } (x_n, Ax_n) \rightarrow (x, y)\}$). Del Lema \ref{ch:semigrupos:lemma:CondOpDisipativo} se sigue que
 

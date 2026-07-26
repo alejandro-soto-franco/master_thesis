@@ -656,6 +656,53 @@ Sea $\Omega \subseteq \R^N$ un abierto con frontera suficientemente regular
 \end{enumerate}
 \end{Teorema}
 
+En dimensión uno y sobre un intervalo acotado, el teorema anterior proporciona
+además una escala de inmersiones compactas entre los espacios $H^k$. Son las que
+intervienen al comprobar que el operador de Timoshenko tiene resolvente compacto
+(Capítulo \ref{ch:TimoshenkoFric}).\\
+
+\begin{Proposicion}{(Inmersiones compactas en un intervalo acotado)}
+\label{ch:preliminares:prop:inmersionesCompactasIntervalo}
+
+Sea $I \subseteq \R$ un intervalo acotado. Entonces
+
+\begin{enumerate}
+    \item $H^1(I) \overset{c}{\hookrightarrow} L^2(I)$;
+    \item $H^2(I) \overset{c}{\hookrightarrow} H^1(I)$.
+\end{enumerate}
+\end{Proposicion}
+
+\begin{proof}
+Para el primer apartado, el Teorema \ref{ch:preliminares:th:inmersionesSobolev}
+proporciona la inmersión compacta $H^1(I) = W^{1,2}(I) \overset{c}{\hookrightarrow} C(\overline{I})$,
+mientras que la inyección $C(\overline{I}) \hookrightarrow L^2(I)$ es continua por ser
+$I$ acotado, ya que $\lVert u \rVert_{L^2(I)} \leq |I|^{1/2} \lVert u \rVert_{C(\overline{I})}$.
+La composición de una inmersión compacta con una continua es compacta, de donde se
+sigue el resultado.
+
+Para el segundo apartado, sea $(u_n)_{n \in \mathbb{N}}$ una sucesión acotada en
+$H^2(I)$. Entonces tanto $(u_n)$ como $(u_n')$ son sucesiones acotadas en $H^1(I)$.
+Aplicando el primer apartado a $(u_n)$ obtenemos una subsucesión $(u_{n_j})$ y una
+función $u \in L^2(I)$ tales que $u_{n_j} \rightarrow u$ en $L^2(I)$; aplicándolo de
+nuevo, esta vez a $(u_{n_j}')$, obtenemos una subsucesión suya $(u_{n_k}')$ y una
+función $v \in L^2(I)$ tales que $u_{n_k}' \rightarrow v$ en $L^2(I)$, sin perder la
+convergencia $u_{n_k} \rightarrow u$.
+
+Veamos que $v$ es la derivada débil de $u$. Por definición de derivada débil,
+
+\[\int_I u_{n_k} \, \varphi' \, \dd x = -\int_I u_{n_k}' \, \varphi \, \dd x, \quad \forall \varphi \in C_c^\infty(I),\]
+
+y, como la convergencia en $L^2(I)$ permite pasar al límite en ambos miembros,
+
+\[\int_I u \, \varphi' \, \dd x = -\int_I v \, \varphi \, \dd x, \quad \forall \varphi \in C_c^\infty(I).\]
+
+Por tanto $u' = v$ en el sentido débil y $u \in H^1(I)$. Finalmente,
+
+\[\lVert u_{n_k} - u \rVert_{H^1(I)}^2 = \lVert u_{n_k} - u \rVert_{L^2(I)}^2 + \lVert u_{n_k}' - u' \rVert_{L^2(I)}^2 \rightarrow 0,\]
+
+luego $(u_{n_k})$ converge en $H^1(I)$ y la inmersión es compacta.
+\end{proof}
+
 Cerramos la sección con la conmutatividad de las derivadas débiles, versión
 distribucional del teorema clásico de Schwarz sobre la igualdad de las derivadas
 parciales cruzadas.\\
