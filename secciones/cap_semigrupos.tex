@@ -1413,10 +1413,10 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
         \item La inyección canónica $X \hookrightarrow E_0$ es compacta.
     \end{enumerate}
 \end{Proposicion}
-\footnotetext{\textcolor{red}{HABLAR DE CÓMO $\big(D(A), \lVert \, \cdot \, \rVert_{G(A)}\big)$ ES UN ESPACIO DE BANACH...}}
+\footnotetext{Aquí $\lVert e \rVert_{G(A)} := \lVert e \rVert_{E_0} + \lVert Ae \rVert_{E_0}$ es la \textit{norma del gráfico}, que hace de $D(A)$ un espacio normado isométricamente isomorfo a $G(A) \subseteq E_0 \times E_0$ mediante $e \mapsto (e, Ae)$. En consecuencia, $X$ es un espacio de Banach si y sólo si $G(A)$ es cerrado en $E_0 \times E_0$; esto es, si y sólo si $A$ es un operador cerrado (Definición \ref{ch:preliminares:def:cerrado}). Este es el caso en las aplicaciones que nos interesan, donde $A$ genera un semigrupo fuertemente continuo y, por tanto, es cerrado (Teorema \ref{ch:semigrupos:th:resSemiFuerteCont}).}
 
 \begin{proof}
-    \textcolor{red}{ACABAR}\\
+    Véase \cite[Proposición~5.8]{engel-2006-sho-cou-ope}. Nótese que la ecuación del resolvente garantiza que $(\lambda - A)^{-1}$ sea compacto para un $\lambda \in \rho(A)$ si y sólo si lo es para todos, de modo que la primera afirmación no depende del $\lambda$ escogido (\cite[Definición~5.7]{engel-2006-sho-cou-ope}).
 \end{proof}
 
 \begin{Corolario}[Espectro de un operador con resolvente compacto]
@@ -1426,7 +1426,21 @@ Se tiene que $T(t)^*$ verifica los axiomas de semigrupo pues:
 \end{Corolario}
 
 \begin{proof}
-    \textcolor{red}{ACABAR}\\
+    Sea $\lambda_0 \in \rho(A)$ tal que $R := (\lambda_0 - A)^{-1}$ es compacto y sea $\lambda \in \sigma(A)$; en particular $\lambda \neq \lambda_0$. Escribimos
+
+    \[\mu := \frac{1}{\lambda_0 - \lambda} \neq 0.\]
+
+    Veamos primero que $\mu \in \sigma(R)$. Todo $y \in E_0$ se escribe de forma única como $y = (\lambda_0 - A)e$ con $e = Ry \in D(A)$, y sobre tales elementos
+
+    \[(\mu I - R)y = \mu(\lambda_0 - A)e - e = \mu\Big[(\lambda_0 - A) - \mu^{-1}\Big]e = \mu(\lambda - A)e,\]
+
+    donde se ha usado que $\mu^{-1} = \lambda_0 - \lambda$. Como $R : E_0 \rightarrow D(A)$ es una biyección, la igualdad anterior muestra que $\mu I - R$ es biyectivo si y sólo si lo es $\lambda - A$. Siendo $\lambda \in \sigma(A)$, se sigue que $\mu \in \sigma(R)$.
+
+    Ahora bien, $R$ es compacto y $\mu \neq 0$, luego $\mu$ es un autovalor de $R$ (\cite[Teorema~6.8]{brezis-2011-fun-ana-sob}): existe $y \neq 0$ con $Ry = \mu y$. Entonces $y = \mu^{-1}Ry \in R(R) = D(A)$ y, aplicando $(\lambda_0 - A)$ a ambos miembros de $Ry = \mu y$,
+
+    \[y = \mu(\lambda_0 - A)y \implies (\lambda_0 - A)y = \mu^{-1}y \implies Ay = \big(\lambda_0 - \mu^{-1}\big)y = \lambda y.\]
+
+    Por lo tanto $\lambda$ es un autovalor de $A$. Por la arbitrariedad de $\lambda \in \sigma(A)$, el espectro de $A$ está formado exclusivamente por autovalores.
 \end{proof}
 
 \begin{Teorema}[Caracterización de la estabilidad exponencial en un espacio de Hilbert]

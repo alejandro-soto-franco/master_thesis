@@ -561,7 +561,21 @@ energía facilitará los desarrollos posteriores de esta sección.\\
 \end{Proposicion}
 
 \begin{proof}
-    \textcolor{red}{ACABAR!}
+    Escribimos $U = (\varphi, \varphi_t, \psi, \psi_t)$ y $\hat{U} = (\hat{\varphi}, \hat{\varphi_t}, \hat{\psi}, \hat{\psi_t})$, y entendemos $\lVert \psi \rVert_{H_0^1} = \lVert \psi_x \rVert_{L^2}$, que es una norma sobre $H_0^1(0,L)$ equivalente a la usual por la desigualdad de Poincaré \ref{ch:preliminares:th:poincare}.
+
+    Cada sumando de \eqref{prodInternoEnergiaH} es de la forma $(TU, T\hat{U})_{L^2}$ para una aplicación lineal $T$ sobre $\mathcal{H}$: la proyección sobre una componente en los tres primeros y $U \mapsto \varphi_x + \psi$ en el cuarto. Como el producto interno de $L^2(0,L)$ es bilineal y simétrico, y las constantes $\rho_1, \rho_2, b, k$ son reales, la aplicación $(\cdot, \cdot)_E$ es bilineal y simétrica.
+
+    Queda comprobar que es definida positiva. Tomando $\hat{U} = U$,
+
+    \[(U,U)_E = \rho_1 \lVert \varphi_t \rVert^2_{L^2} + \rho_2 \lVert \psi_t \rVert^2_{L^2} + b \lVert \psi_x \rVert^2_{L^2} + k \lVert \varphi_x + \psi \rVert^2_{L^2} \geq 0,\]
+
+    por ser $\rho_1, \rho_2, b, k > 0$. Supongamos ahora que $(U,U)_E = 0$. Entonces se anulan los cuatro sumandos por separado, de modo que $\varphi_t = 0$ y $\psi_t = 0$ en $L^2(0,L)$ y, además, $\psi_x = 0$. De esto último y de la desigualdad de Poincaré \ref{ch:preliminares:th:poincare} aplicada a $\psi \in H_0^1(0,L)$ se obtiene
+
+    \[\lVert \psi \rVert_{L^2} \leq C \lVert \psi_x \rVert_{L^2} = 0,\]
+
+    esto es, $\psi = 0$. El cuarto sumando se reduce entonces a $k\lVert \varphi_x \rVert^2_{L^2} = 0$, y repitiendo el argumento sobre $\varphi \in H_0^1(0,L)$ se concluye $\varphi = 0$. Por lo tanto $U = 0$. El recíproco es inmediato, luego $(U,U)_E = 0$ si y sólo si $U = 0$.
+
+    Nótese que la condición de contorno es esencial en este paso: sobre $H^1(0,L)$ sin anulación en los extremos, $\varphi_x = 0$ sólo daría $\varphi$ constante.
 \end{proof}
 
 Veamos ahora una norma asociada al funcional de energía equivalente a la norma del espacio.\\
@@ -582,7 +596,39 @@ Veamos ahora una norma asociada al funcional de energía equivalente a la norma 
 \end{Proposicion}
 
 \begin{proof}
-    \textcolor{red}{ACABAR!}
+    Que $\lVert \, \cdot \, \rVert_E$ es una norma es inmediato: por la Proposición \ref{ch:teoriaVigas:prop:ProdInternoEnergia}, la aplicación $(\cdot,\cdot)_E$ es un producto interno sobre $\mathcal{H}$, y $\lVert U \rVert_E = (U,U)_E^{1/2}$ es la norma que induce (Definición \ref{ch:preliminares:def:productoInterno}).
+
+    Probemos la equivalencia. Denotamos por $C_P$ la constante de Poincaré \ref{ch:preliminares:th:poincare} del intervalo $(0,L)$, de modo que $\lVert u \rVert_{L^2} \leq C_P \lVert u_x \rVert_{L^2}$ para toda $u \in H_0^1(0,L)$, y recordamos la desigualdad $(a+b)^2 \leq 2(a^2+b^2)$.
+
+    Para la primera desigualdad, acotamos el término cruzado:
+
+    \[k\lVert \varphi_x + \psi \rVert^2_{L^2} \leq 2k \lVert \varphi_x \rVert^2_{L^2} + 2k\lVert \psi \rVert^2_{L^2} \leq 2k \lVert \varphi \rVert^2_{H_0^1} + 2kC_P^2 \lVert \psi \rVert^2_{H_0^1},\]
+
+    de donde
+
+    \[\lVert U \rVert_E^2 \leq 2k \lVert \varphi \rVert^2_{H_0^1} + \rho_1 \lVert \varphi_t \rVert^2_{L^2} + \big(b + 2kC_P^2\big) \lVert \psi \rVert^2_{H_0^1} + \rho_2 \lVert \psi_t \rVert^2_{L^2} \leq C_2 \lVert U \rVert^2_{\mathcal{H}},\]
+
+    con $C_2 := \max\{2k, \rho_1, b + 2kC_P^2, \rho_2\} > 0$.
+
+    Para la desigualdad recíproca escribimos $\varphi_x = (\varphi_x + \psi) - \psi$ y procedemos de igual modo:
+
+    \[\lVert \varphi \rVert^2_{H_0^1} = \lVert \varphi_x \rVert^2_{L^2} \leq 2\lVert \varphi_x + \psi \rVert^2_{L^2} + 2\lVert \psi \rVert^2_{L^2} \leq 2\lVert \varphi_x + \psi \rVert^2_{L^2} + 2C_P^2 \lVert \psi_x \rVert^2_{L^2},\]
+
+    y por tanto
+
+    \begin{align*}
+        \lVert U \rVert^2_{\mathcal{H}} &= \lVert \varphi \rVert^2_{H_0^1} + \lVert \varphi_t \rVert^2_{L^2} + \lVert \psi \rVert^2_{H_0^1} + \lVert \psi_t \rVert^2_{L^2}\\
+        &\leq 2\lVert \varphi_x + \psi \rVert^2_{L^2} + \big(1 + 2C_P^2\big)\lVert \psi_x \rVert^2_{L^2} + \lVert \varphi_t \rVert^2_{L^2} + \lVert \psi_t \rVert^2_{L^2}\\
+        &\leq C_1^{-1} \lVert U \rVert^2_E,
+    \end{align*}
+
+    donde basta tomar $C_1^{-1} := \max\left\{\tfrac{2}{k}, \tfrac{1 + 2C_P^2}{b}, \tfrac{1}{\rho_1}, \tfrac{1}{\rho_2}\right\} > 0$, comparando cada sumando con el término correspondiente de $\lVert U \rVert_E^2$.
+
+    Reuniendo ambas cotas,
+
+    \[C_1 \lVert U \rVert^2_{\mathcal{H}} \leq \lVert U \rVert^2_E \leq C_2 \lVert U \rVert^2_{\mathcal{H}}, \quad \forall U \in \mathcal{H},\]
+
+    que es la equivalencia buscada (Definición \ref{ch:preliminares:def:normasEquivalentes}).
 \end{proof}
 
 Por último, acabamos esta sub-sección con una observación.\\
