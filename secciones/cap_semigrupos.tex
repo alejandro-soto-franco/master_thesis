@@ -176,8 +176,7 @@ Sea $\{T(t), t \geq 0\}$ un semigrupo fuertemente continuo. Entonces:
     Luego, para $h > 0$ se verificará, atendiendo a lo anterior:
 
     \begin{align*}
-        \frac{1}{h}(T(t)e_{\varepsilon} - e_{\varepsilon}) &= \frac{1}{\varepsilon h} \left \{\int_{h}^{h + \varepsilon} T(t)e \, \dd t - \int_0^{\varepsilon} T(t)e \, \dd t \right \}\\
-        &= \frac{1}{\varepsilon h} \left \{\int_{h}^{h + \varepsilon} T(t)e \, \dd t - \int_0^{\varepsilon} T(t)e \, \dd t \right \}\\
+        \frac{1}{h}(T(h)e_{\varepsilon} - e_{\varepsilon}) &= \frac{1}{\varepsilon h} \left \{\int_{h}^{h + \varepsilon} T(t)e \, \dd t - \int_0^{\varepsilon} T(t)e \, \dd t \right \}\\
         &= \frac{1}{\varepsilon h} \left \{ \left ( \int_{h}^{\varepsilon} T(t)e \, \dd t + \int_{\varepsilon}^{h + \varepsilon} T(t)e \, \dd t\right ) - \left ( \int_0^{h} T(t)e \, \dd t + \int_h^{\varepsilon} T(t)e \, \dd t \right ) \right \}\\
         &= \frac{1}{\varepsilon h} \left \{\int_{\varepsilon}^{h + \varepsilon} T(t)e \, \dd t - \int_0^{h} T(t)e \, \dd t \right \} \rightarrow \frac{1}{\varepsilon}(T(\varepsilon)e - e),
     \end{align*}
@@ -405,30 +404,7 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
         &\leq ||e||_{E_0} \frac{1}{\lambda - \omega}, \text{ si } \lambda > \omega.
     \end{align*}
 
-    Ahora veamos la implicación $2. \implies 1.$ Sea $T(t)$ un $C_0$-semigrupo que satisface que $||T(t)||_{L(E_0)} \leq \mathrm{e}^{\omega t}, \forall t \geq 0$. Consideremos $T_1(t) = \mathrm{e}^{-\omega t}T(t)$; es inmediato comprobar que $T_1(t)$ es un semigrupo. Luego, si $A$ es el generador infinitesimal de $T(t)$, entonces $A_1 = A - \omega$ es el de $T_1(t)$ pues
-
-    \begin{align*}
-        A_1 e &= \lim_{t \rightarrow 0^+} \frac{T_1(t)e - e}{t}\\
-        &= \lim_{t \rightarrow 0^+} \frac{T(t)\mathrm{e}^{-\omega t} e - e}{t}\\
-        &= \lim_{t \rightarrow 0^+}\frac{T(t)\mathrm{e}^{-\omega t}e - e + T(t)e - T(t)e}{t}\\
-        &= \lim_{t \rightarrow 0^+} \left [ T(t)e \left (\frac{\mathrm{e}^{-\omega t} - 1}{t} \right) + \frac{T(t)e - e}{t} \right ]\\
-        &= (-\omega I + A)e.
-    \end{align*}
-
-    Por otra parte,
-
-    \begin{align*}
-        &||T_1(t)||_{L(E_0)} = ||T(t) \mathrm{e}^{-\omega t}||_{L(E_0)} = \mathrm{e}^{-\omega t} ||T(t)||_{L(E_0)} \leq \mathrm{e}^{-\omega t}\mathrm{e}^{\omega t} = 1\\
-        \implies& ||T_1(t)||_{L(E_0)} \leq 1,
-    \end{align*}
-
-    así, $T_1(t)$ es un semigrupo de contracciones.
-
-    De los desarrollos anteriores deducimos que $D(A) = D(A_1)$. Queremos explorar el caso $\omega = 0$. Para ello, definimos $\mu = \lambda - \omega$ y se tiene que, para un generador $B$:
-
-    \[||(\mu - B)^{-1}||_{L(E_0)} \leq \frac{1}{\mu}, \ \forall \mu > 0.\]
-
-    Luego,
+    Ahora veamos la implicación $2. \implies 1.$ Comenzamos reduciendo el problema al caso $\omega = 0$. Para ello definimos $A_1 := A - \omega$ sobre $D(A_1) := D(A)$ y, escribiendo $\mu = \lambda - \omega$, observamos que
 
     \begin{align*}
         \lambda - A &= \mu + \omega - A\\
@@ -437,7 +413,29 @@ Dada la definición anterior, estamos ya en posición de continuar con la demost
         \implies& (\lambda - A)^{-1} = (\mu - A_1)^{-1}.
     \end{align*}
 
-    En consecuencia, $B=A_1$ (tienen el mismo resolvente) y, por el Teorema \ref{ch:semigrupos:th:unicidadSemigrupos}, generan el mismo semigrupo; es decir, $T_1(t)$. Asimismo, como $(\lambda - A)^{-1} = (\mu - A_1)^{-1}$, es suficiente con probar la implicación asumiendo $\omega = 0$.
+    En consecuencia $A_1$ es cerrado y densamente definido, $\rho(A_1)$ contiene al intervalo $(0, \infty)$ y
+
+    \[||(\mu - A_1)^{-1}||_{L(E_0)} \leq \frac{1}{\mu}, \ \forall \mu > 0;\]
+
+    esto es, $A_1$ satisface $2.$ con $\omega = 0$.
+
+    Supongamos ya probado el caso $\omega = 0$, de modo que $A_1$ es el generador infinitesimal de un semigrupo fuertemente continuo de contracciones $\{T_1(t), t \geq 0\}$, y definamos $T(t) := \mathrm{e}^{\omega t}T_1(t)$. Es inmediato comprobar que $\{T(t), t \geq 0\}$ es un semigrupo fuertemente continuo. Además,
+
+    \begin{align*}
+        &||T(t)||_{L(E_0)} = ||\mathrm{e}^{\omega t}T_1(t)||_{L(E_0)} = \mathrm{e}^{\omega t} ||T_1(t)||_{L(E_0)} \leq \mathrm{e}^{\omega t}\\
+        \implies& ||T(t)||_{L(E_0)} \leq \mathrm{e}^{\omega t},
+    \end{align*}
+
+    y su generador infinitesimal es $A$, pues
+
+    \begin{align*}
+        \lim_{t \rightarrow 0^+} \frac{T(t)e - e}{t} &= \lim_{t \rightarrow 0^+} \frac{\mathrm{e}^{\omega t}T_1(t)e - e}{t}\\
+        &= \lim_{t \rightarrow 0^+}\frac{\mathrm{e}^{\omega t}T_1(t)e - T_1(t)e + T_1(t)e - e}{t}\\
+        &= \lim_{t \rightarrow 0^+} \left [ T_1(t)e \left (\frac{\mathrm{e}^{\omega t} - 1}{t} \right) + \frac{T_1(t)e - e}{t} \right ]\\
+        &= (\omega I + A_1)e = Ae,
+    \end{align*}
+
+    con $D(A) = D(A_1)$. Es suficiente, por tanto, probar la implicación asumiendo $\omega = 0$.
 
     Asumimos entonces $2.$ con $\omega = 0$. Para $\lambda > 0$:
 
@@ -793,7 +791,7 @@ Empezamos aportando la definición de \textit{operador disipativo}:\\
 
     Luego, para cualquier $e \in E_0, e^* \in J(e), t > 0$:
 
-    \[\big |\langle e^*, T(t)e \rangle \big | \leq \underbrace{\lVert T(t)e \rVert_{E_0}}_{\leq 1} \ \underbrace{\lVert e^* \rVert}_{\leq \lVert e \rVert^2_{E_0}} \leq \lVert e \rVert^2_{E_0},\]
+    \[\big |\langle e^*, T(t)e \rangle \big | \leq \underbrace{\lVert T(t)e \rVert_{E_0}}_{\leq \lVert e \rVert_{E_0}} \ \underbrace{\lVert e^* \rVert_{E_0^*}}_{= \lVert e \rVert_{E_0}} \leq \lVert e \rVert^2_{E_0},\]
 
     y entonces,
 
@@ -1016,7 +1014,7 @@ En mucho ejemplos, la técnica utilizada para verificar que las estimativas espe
 \begin{proof}
     Tenemos que, por ser $A$ simétrico, se tiene que $A \subset A^*$. Es decir, $D(A) \subset D(A^*)$ y $A^*|_{D(A)} =A$. Debemos probar que $A^* \subset A$ (es suficiente con demostrar que $D(A^*) \subset D(A)$).
 
-    Sea $y \in D(A^*)$. Por definición de operador adjunto, existe $z \in D(A^*)$ tal que $\langle y , Ax\rangle = \langle z ,x \rangle \ \ \forall x \in D(A)$. Como $z \in H$ y $A$ es sobreyectivo, entonces existe un elemento $\omega \in D(A)$ tal que $z = A\omega$. En consecuencia, $\langle y, Ax\rangle = \langle A \omega, x \rangle \ \ \forall x \in D(A)$. Como $A$ es simétrico, entonces $\langle A \omega, x \rangle = \langle \omega, Ax \rangle$. En consecuencia:
+    Sea $y \in D(A^*)$. Por definición de operador adjunto, existe $z = A^*y \in H$ tal que $\langle y , Ax\rangle = \langle z ,x \rangle \ \ \forall x \in D(A)$. Como $z \in H$ y $A$ es sobreyectivo, entonces existe un elemento $\omega \in D(A)$ tal que $z = A\omega$. En consecuencia, $\langle y, Ax\rangle = \langle A \omega, x \rangle \ \ \forall x \in D(A)$. Como $A$ es simétrico, entonces $\langle A \omega, x \rangle = \langle \omega, Ax \rangle$. En consecuencia:
 
     \[\langle y ,Ax \rangle = \langle w, Ax\rangle \implies \langle y - \omega, Ax \rangle = 0 \ \ \forall x \in D(A).\]
 
@@ -1112,7 +1110,7 @@ Lo anterior se puede comprobar haciendo una representación gráfica de la situa
     \begin{align*}
         &\left \lVert \left (I - \frac{1}{n}A \right ) x\right \rVert_{E_0} \geq \lVert x \rVert_{E_0}\\
         \implies& \left \lVert y \right \rVert_{E_0} \geq \left \lVert \left (I - \frac{1}{n}A \right )^{-1} y\right \rVert_{E_0}\\
-        \implies& \left \lVert \left (I - \frac{1}{n}A \right )\right \rVert_{L(E_0)} \leq 1.
+        \implies& \left \lVert \left (I - \frac{1}{n}A \right )^{-1}\right \rVert_{L(E_0)} \leq 1.
     \end{align*}    
 
     Por lo tanto, 
